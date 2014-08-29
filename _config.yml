@@ -1,6 +1,7 @@
 safe: true
 baseurl: /
 url: http://localhost:4000
+timezone: Asia/Tehran
 
 pygments: true
 markdown: kramdown
