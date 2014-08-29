@@ -1,24 +1,14 @@
-# Welcome
+# خوش آمدید
 
-There's a lot of outdated information on the Web that leads new PHP users astray,
-propagating bad practices and insecure code. _PHP: The Right Way_ is an easy-to-read,
-quick reference for PHP popular coding standards, links to authoritative tutorials
-around the Web and what the contributors consider to be best practices at the present
-time.
+اطلاعات بسیار قدیمی موجود در وب باعث می‌شود کاربران جدید PHP دچار سرگردانی شده و عادت‌های بد کدنوشتن (از جمله نا امن بودن کد) را در آن‌ها ایجاد می‌کند. _PHP: مسیر صحیح_ یک راهنمای ساده و جامع از بهترین روش‌های کدنویسی در PHP است، که به بسیاری از راهنماهای معتبر در وب پیوند دارد که اکثر آن‌ها شامل بهترین روش‌های کدنویسی هستند.
 
-_There is no canonical way to use PHP_. This website aims to introduce new PHP
-developers to some topics which they may not discover until it is too late, and aims
-to give seasoned pros some fresh ideas on those topics they've been doing for years
-without ever reconsidering. This website will also not tell you which tools to use, but
-instead offer suggestions for multiple options, when possible explaining the differences
-in approach and use-case.
+_استفاده از PHP استاندارد خاصی ندارد_. هدف این وبسایت معرفی موضوعاتی برای توسعه‌دهندگان PHP است که تا به حال با آن برخورد نکرده‌اند، همچنین معرفی ایده‌هایی برای افراد حرفه‌ای است که ممکن است سال‌ها از این ایده‌ها استفاده کرده بدون اینکه به یاد داشته باشند. این وبسایت شما را به استفاده از یک ابزار خاص سوق نمی‌دهد بلکه گزینه‌های مختلفی پیش روی شما می‌گذارد، که هر زمان لازم باشد تفاوت بین آن‌ها گفته می‌شود.
 
-This is a living document and will continue to be updated with more helpful information
-and examples as they become available.
+این یک سند فعال و در حال تغییر است که طی بازه‌های زمانی با اطلاعات جدید و کاربردی جایگزین می‌شود.
 
-## Translations
+## ترجمه‌ها
 
-_PHP: The Right Way_ is (or soon will be) translated into many different languages:
+وبسایت PHP: مسیر صحیح به زبان‌های مختلفی ترجمه شده است (یا در حال ترجمه است):
 
 * [English](http://www.phptherightway.com)
 * [Chinese (Simplified)](http://wulijun.github.com/php-the-right-way)
@@ -27,6 +17,7 @@ _PHP: The Right Way_ is (or soon will be) translated into many different languag
 * [Korean](http://wafe.github.io/php-the-right-way/)
 * [Indonesian](http://id.phptherightway.com/)
 * [Italian](http://it.phptherightway.com/)
+* [Persian](http://novid.github.io/php-the-right-way/)
 * [Polish](http://pl.phptherightway.com/)
 * [Portuguese](http://br.phptherightway.com/)
 * [Romanian](https://bgui.github.io/php-the-right-way/)
@@ -39,16 +30,14 @@ _PHP: The Right Way_ is (or soon will be) translated into many different languag
 * [Turkish](http://hkulekci.github.io/php-the-right-way/)
 * [Slovenian](http://sl.phptherightway.com)
 
-## How to Contribute
+## چگونه مشارکت کنم
 
-Help make this website the best resource for new PHP programmers! [Contribute on GitHub][1]
+کمک کنید تا این وبسایت را به بهترین منبع برای برنامه‌نویسان PHP (مخصوصا تازه واردها) تبدیل کنیم! [مشارکت در Github][1]
 
-## Spread the Word!
+## اطلاع رسانی کنید!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP developers
-know where to find good information!
-
-[See Banner Images][2]
+وبسایت _PHP: مسیر صحیح_ بنرهایی مخصوص وب دارد که می‌توانید در سایت خود قرار دهید. پشتیبانی کنید و بگذارید تازه‌واردهای PHP به منابع خوب دسترسی داشته باشند.
+[مشاهده‌ی بنرها][2]
 
 [1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
 [2]: /banners.html
