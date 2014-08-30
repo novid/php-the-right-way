@@ -1,4 +1,5 @@
 ---
+title: نصب در مکینتاش
 isChild: true
 anchor: mac_setup
 ---

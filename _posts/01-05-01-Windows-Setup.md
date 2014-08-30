@@ -1,4 +1,5 @@
 ---
+title: نصب در ویندوز
 isChild: true
 anchor: windows_setup
 ---
