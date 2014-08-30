@@ -3130,8 +3130,8 @@ select {
 .top {
   background: #333;
   display: inline-block;
-  float: right;
-  margin-right: -40px;
+  float: left;
+  margin-left: -40px;
   padding: 4px 8px;
   color: #FFF;
   font-size: 12px;
