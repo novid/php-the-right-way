@@ -534,11 +534,15 @@ select {
 @header-font-weight: @header-font-weight;
 */
 /* Base */
+@font-face {
+  font-family: Jalal;
+  src: url("fonts/Jalal.eot?#") format("eot"), url("fonts/Jalal.woff") format("woff"), url("fonts/Jalal.ttf") format("truetype");
+}
 html,
 body {
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   color: #666666;
-  font-size: 14px;
+  font-size: 100%;
   line-height: 20px !important;
 }
 /* Block-level */
