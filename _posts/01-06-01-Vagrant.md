@@ -5,30 +5,19 @@ anchor: vagrant
 
 ## Vagrant {#vagrant_title}
 
-Running your application on different environments in development and production can lead to strange bugs 
-popping up when you go live. It's also tricky to keep different development environments up to date with the same 
-version for all libraries used when working with a team of developers. 
+نرم‌افزار در محیط‌های متفاوت (محیط توسعه و تولید) دچار باگ‌های عجیبی می‌شود که هنگام اجرای رسمی، با آن مواجه می‌شوید. زمانی که با تیمی از توسعه‌دهندگان همکاری می‌کنید، بسیار دشوار است که محیط‌های مختلف توسعه را با یکدیگر سازگار و یکسان نگاه دارید.
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you 
-should consider using a virtual machine. This sounds tricky, but by using [Vagrant][vagrant] you can set up a simple 
-virtual machine with only a few steps. These base boxes can then be set up manually, or you can use "provisioning" 
-software such as [Puppet][puppet] or [Chef][chef] to do this for you. Provisioning the base box is a great way to 
-ensure that multiple boxes are set up in an identical fashion and removes the need for you to maintain complicated 
-"set up" command lists. You can also "destroy" your base box and recreate it without many manual steps, making it
-easy to create a "fresh" installation.
+اگر محیط توسعه‌ی شما ویندوز و محیط تولید شما لینوکس (یا هر محیط غیر ویندوزی) است یا در قالب یک تیم فعالیت می‌کنید، استفاده از یک ماشین مجازی را باید مد نظر داشته باشید. ممکن است کمی دشوار باشد، اما با استفاده از ابزاری مانند [Vagrant][vagrant] می‌توانید یک ماشین مجازی ساده را در کوتاه‌ترین زمان آماده کنید. این بسته‌های پایه به صورت دستی قابل نصب هستند، یا می‌توانید از نرم‌افزارهایی مانند [Puppet][puppet] یا [Chef][chef] جهت پیاده‌سازی اولیه‌ی آن‌ها برای شما، استفاده کنید. استفاده از این ابزارها برای ایجاد بسته‌های پایه روش مناسبی است جهت اطمینان حاصل کردن از این مورد که تمام بسته‌ها در محیط‌های متفاوت، عمکرد یکسانی خواهند داشت. همچنین می‌توانید بسته‌ی پایه‌ی خود را "نابود" کرده و دوباره آن را بسازید، بدون آنکه این کار را دستی انجام دهید.
 
-Vagrant creates folders for sharing your code between your host and your virtual machine, which means that you can 
-create and edit your files on your host machine and then run the code inside your virtual machine.
+Vagrant پوشه‌هایی را جهت اشتراک‌گذاری کد شما روی ماشین شما و ماشین مجازی ایجاد می‌کند، که به این معنی است شما فایل‌های خود را در ماشین خود ایجاد یا ویرایش می‌کنید و برنامه‌ی شما در ماشین مجازی اجرا می‌شود.
 
-### A little help
+### اندکی راهنمایی
 
-If you need a little help to start using Vagrant there are three services that might be useful:
+اگر در استفاده از Vagrant به کمی راهنمایی نیاز دارید سه سرویس مختلف وجود دارند که شما را یاری می‌رسانند:
 
-- [Rove][rove]: service that allows you to pre-generate typical Vagrant builds, PHP among the options. The
-  provisioning is made with Chef.
-- [Puphpet][puphpet]: simple GUI to set up virtual machines for PHP development. **Heavily focused in PHP**. Besides
-  local VMs, can be used to deploy to cloud services as well. The provisioning is made with Puppet.
-- [Protobox][protobox]: is a layer on top of vagrant and a web GUI to setup virtual machines for web development. A single YAML document controls everything that is installed on the virtual machine.
+- [Rove][rove]: سرویسی که عمومی‌ترین خدمات Vagrant را برای شما تولید می‌کند، از جمله PHP. آماده‌سازی توسط Chef صورت می‌گیرد.
+- [Puphpet][puphpet]: رابط گرافیکی ساده‌ای که برای توسعه در PHP، ماشین مجازی می‌سازد. **تمرکز زیادی روی PHP دارد**. آماده‌سازی توسط Puppet صورت می‌گیرد.
+- [Protobox][protobox]: به عنوان لایه‌ای در بالای Vagrant عمل می‌کند که با محیط گرافیکی تحت وب اجازه می‌دهد ماشین مجازی بسازید. یک سند ساده‌ی YAML مسیولیت کنترل تمام موارد را به ععده دارد.
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/

@@ -1,15 +1,15 @@
 ---
-title: Built-in Web Server
+title: وب سرور پیش فرض
 isChild: true
 anchor: builtin_web_server
 ---
 
-## Built-in web server {#builtin_web_server_title}
+## وب سرور پیش فرض {#builtin_web_server_title}
 
-With PHP 5.4 or newer, you can start learning PHP without installing and configuring a full-fledged web server. To start the server, run the following command from your terminal in your project's web root:
+در PHP 5.4 و نسخه‌های بعد از آن، شما می‌توانید به راحتی یادگیری را آغاز کنید بدون آنکه نیاز به یک وب سرور کامل داشته باشید. برای راه‌اندازی سرور، دستور زیر را در زیرشاخه‌ی اصلی پروژه‌ی خود اجرا کنید:
 
     > php -S localhost:8000
 
-* [Learn about the built-in, command line web server][cli-server]
+* [درباره‌ی وب سرور پیش فرض PHP بیشتر بدانید.][cli-server]
 
 [cli-server]: http://www.php.net/manual/en/features.commandline.webserver.php

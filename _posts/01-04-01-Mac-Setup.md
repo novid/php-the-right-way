@@ -3,18 +3,15 @@ isChild: true
 anchor: mac_setup
 ---
 
-## Mac Setup  {#mac_setup_title}
+## نصب در مکینتاش  {#mac_setup_title}
 
-OSX comes prepackaged with PHP but it is normally a little behind the latest stable. Lion comes with PHP 5.3.6,
-Mountain Lion has 5.3.10, and Mavericks has 5.4.17.
+سیستم عامل OSX به صورت پیش فرض PHP را نصب دارد اما از نسخه‌های قدیمی‌تر آن استفاده می‌کند. Lion با PHP 5.3.6، Mountain Lion با PHP 5.3.10 و Mavericks با PHP 5.4.17 همراه است.
 
-To update PHP on OSX you can get it installed through a number of Mac [package managers][mac-package-managers], with
-[php-osx by Liip][php-osx-downloads] being recommended.
+برای بروزرسانی PHP در OSX می‌توانید از [مدیر بسته‌های][mac-package-managers] مختلف استفاده کنید، که توصیه ما استفاده از [php-osx توسط Liip][php-osx-downloads] است.
 
-You can also [compile it yourself][mac-compile]; if you do, be sure to have installed either Xcode or
-Apple's substitute ["Command Line Tools for Xcode"][apple-developer], downloadable from Apple's Mac Developer Center.
+شما همچنین می‌توانید خودتان آن را [کامپایل][mac-compile] کنید; در این صورت، اطمینان حاصل کنید که قبل از آن Xcode یا [جایگزین Apple][apple-developer] برای آن را نصب کرده باشید، که از وبسایت رسمی Apple قابل دریافت است.
 
-For a complete "all-in-one" package that includes PHP, Apache web server and MySQL database, all with a nice graphical interface, try [MAMP][mamp-downloads] or [XAMPP][xampp].
+بسته‌های آماده‌ای مانند [MAMP][mamp-downloads] یا [XAMPP][xampp] هستند که شامل زبان برنامه‌نویسی PHP، وب سرور Apache و پایگاه داده‌ی MySQL به همراه محیط گرافیکی ساده هستند.
 
 [mac-package-managers]: http://www.php.net/manual/en/install.macosx.packages.php
 [mac-compile]: http://www.php.net/manual/en/install.macosx.compile.php

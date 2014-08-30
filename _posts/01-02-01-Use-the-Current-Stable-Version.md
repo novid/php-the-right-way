@@ -1,12 +1,12 @@
 ---
-title: Use the Current Stable Version (5.5)
+title: استفاده از آخرین نسخه پایدار (۵.۵)
 isChild: true
 anchor: use_the_current_stable_version
 ---
 
-## Use the Current Stable Version (5.5) {#use_the_current_stable_version_title}
+## استفاده از آخرین نسخه پایدار (۵.۵) {#use_the_current_stable_version_title}
 
-If you are getting started with PHP, start with the current stable release of [PHP 5.5][php-release]. PHP has added powerful [new features](#language_highlights) over the last few years. Though the incremental version number difference between 5.2 and 5.5 is small, it represents _major_ improvements. If you are looking for a function or its usage, the documentation on the [php.net][php-docs] website will have the answer.
+اگر تازه با PHP آشنا شده‌اید توصیه می‌کنیم از آخرین نسخه‌ی پایدار [PHP 5.5][php-release] استفاده کنید. PHP طی سال‌های اخیر [ویژگی‌های جدید](#language_highlights) قدرتمندی را اضافه کرده است. با اینکه تفاوت نسخه‌های 5.2 تا 5.5 ناچیز به نظر می‌رسد اما تغییرات _بزرگی_ را شامل می‌شود. اگر به دنبال تابع یا عملکرد خاصی هستید، مستندات رسمی [php.net][php-docs] پاسخگوی شماست.
 
 [php-release]: http://www.php.net/downloads.php
 [php-docs]: http://www.php.net/manual/en/
