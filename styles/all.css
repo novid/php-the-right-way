@@ -565,13 +565,13 @@ pre {
 /* Headers */
 .all-headers {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
 }
 h1,
 .alpha {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 35px;
   line-height: 40px !important;
@@ -579,7 +579,7 @@ h1,
 h2,
 .beta {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 24.5px;
   line-height: 40px !important;
@@ -587,7 +587,7 @@ h2,
 h3,
 .gamma {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 16.8px;
   line-height: 40px !important;
@@ -596,7 +596,7 @@ h3,
 h4,
 .delta {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 14px;
   line-height: 40px !important;
@@ -605,7 +605,7 @@ h4,
 h5,
 .epsilon {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px !important;
@@ -614,7 +614,7 @@ h5,
 h6,
 .zeta {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px !important;
@@ -623,21 +623,21 @@ h6,
 /* Headers (above scale) */
 .giga {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 84px;
   line-height: 80px;
 }
 .mega {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 70px;
   line-height: 60px;
 }
 .kilo {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 56px;
   line-height: 60px;
@@ -645,7 +645,7 @@ h6,
 /* Headers (below scale) */
 .milli {
   color: #111111;
-  font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+  font-family: Jalal;
   font-weight: 700;
   font-size: 11.200000000000001px;
 }
