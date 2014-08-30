@@ -536,7 +536,7 @@ select {
 /* Base */
 @font-face {
   font-family: Jalal;
-  src: url("fonts/Jalal.eot?#") format("eot"), url("fonts/Jalal.woff") format("woff"), url("fonts/Jalal.ttf") format("truetype");
+  src: url("../fonts/Jalal.eot?#") format("eot"), url("../fonts/Jalal.woff") format("woff"), url("../fonts/Jalal.ttf") format("truetype");
 }
 html,
 body {
