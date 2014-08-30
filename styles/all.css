@@ -89,9 +89,14 @@ video {
   vertical-align: baseline;
   background: transparent;
 }
+@font-face {
+  font-family: Jalal;
+  src: url("fonts/Jalal.eot?#") format("eot"), url("fonts/Jalal.woff") format("woff"), url("fonts/Jalal.ttf") format("truetype");
+}
 body {
   line-height: 1;
   direction: rtl;
+  font-family: Jalal;
 }
 article,
 aside,
