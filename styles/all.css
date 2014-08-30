@@ -91,6 +91,7 @@ video {
 }
 body {
   line-height: 1;
+  direction: rtl;
 }
 article,
 aside,
@@ -3031,7 +3032,7 @@ select {
 .fork-me img {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
 }
 .fork-me {
   z-index: 2;
@@ -3110,7 +3111,7 @@ select {
   text-decoration: none;
 }
 .site-content {
-  padding: 20px 40px 40px 320px;
+  padding: 20px 320px 40px 40px;
 }
 .site-content h1 {
   clear: both;
