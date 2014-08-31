@@ -1,33 +1,24 @@
 ---
+title: فضای نام‌گذاری
 isChild: true
 anchor: namespaces
 ---
 
-## Namespaces {#namespaces_title}
+## فضای نام‌گذاری {#namespaces_title}
 
-As mentioned above, the PHP community has a lot of developers creating lots of code. This means that 
-one library's PHP code may use the same class name as another library. When both libraries are used 
-in the same namespace, they collide and cause trouble.
+همان‌طور که اشاره شد، جامعه‌ی PHP توسعه‌دهندگان زیادی دارد که کدهای فراوانی تولید می‌کنند. این بدان معناست که کد PHP یک کتابخانه (Library) ممکن است از یک نام کلاس در کتابخانه‌ای دیگر استفاده کرده باشد. وقتی این دو کتابخانه در یک فضا استفاده می‌شوند، تداخل آن‌ها مشکل آفرین می‌شود.
 
-_Namespaces_ solve this problem. As described in the PHP reference manual, namespaces may be compared 
-to operating system directories that _namespace_ files; two files with the same name may co-exist in 
-separate directories. Likewise, two PHP classes with the same name may co-exist in separate PHP 
-namespaces. It's as simple as that.
+_فضای نام‌گذاری (Namespace)_ این مشکل را حل می‌کند. همان‌طور که در راهنمای رسمی PHP توضیح داده شده است، فضای نام‌گذاری در PHP مانند ساختار دایرکتوری در سیستم‌عامل عمل می‌کند. همان‌طور که دو فایل با نام‌های یکسان در دو دایرکتوری می‌توانند وجود داشته باشند، دو کلاس PHP با نام‌های یکسان در دو فضای نام‌گذاری جداگونه می‌توانند وجود داشته باشند. به همین سادگی!
 
-It is important for you to namespace your code so that it may be used by other developers without fear 
-of colliding with other libraries.
+مهم است که شما کد خود را با استفاده از فضای نام‌گذاری شده توسعه دهید تا اگر دیگران قصد استفاده از آن را داشتند، تداخلی به وجود نیاید.
 
-One recommended way to use namespaces is outlined in [PSR-0][psr0], which aims to provide a standard file, 
-class and namespace convention to allow plug-and-play code.
+یک روش توصیه شده در استفاده از فضای‌ نام‌گذاری در راهنمای [PSR-0][psr0] موجود است، که ساختاری استاندارد برای فایل و کلاس ایجاد می‌کند.
 
-In December 2013 the PHP-FIG created a new autoloading standard: [PSR-4][psr4], which one day will 
-probably replace PSR-0. Currently both are still usable, as PSR-4 requires PHP 5.3 and many PHP 5.2-only 
-projects currently implement PSR-0. If you're going to use an autoloader standard for a new application or 
-package then you almost certainly want to look into PSR-4.
+در دی ماه ۱۳۹۲ PHP-FIG استانداردی جدید را به وجود آورد: [PSR-4][psr4] که روزی جایگزین PSR-0 خواهد شد. هم‌اکنون هر دو قابل استفاده هستند با این تفاوت که PSR-4 به PHP 5.3 نیازمند است در حالی بسیاری پروژه‌های مبتنی بر PhP 5.2 از PSR-0 استفاده می‌کنند. اگر قصد استفاده از این استاندارد برای نرم‌افزار جدید خود را دارید بهتر است به PSR-4 نگاهی بیندازید.
 
-* [Read about Namespaces][namespaces]
-* [Read about PSR-0][psr0]
-* [Read about PSR-4][psr4]
+* [درباره‌ی فضای نام‌گذاری بیشتر بدانید][namespaces]
+* [درباره‌ی PSR-0 بیشتر بدانید][psr0]
+* [درباره‌ی PSR-4 بیشتر بدانید][psr4]
 
 [namespaces]: http://php.net/manual/en/language.namespaces.php
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md

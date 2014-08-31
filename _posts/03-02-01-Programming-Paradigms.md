@@ -1,52 +1,48 @@
 ---
+title: الگوهای برنامه‌نویسی
 isChild: true
 anchor: programming_paradigms
 ---
 
-## Programming Paradigms {#programming_paradigms_title}
+## الگوهای برنامه‌نویسی {#programming_paradigms_title}
 
-PHP is a flexible, dynamic language that supports a variety of programming techniques. It has evolved dramatically over
-the years, notably adding a solid object-oriented model in PHP 5.0 (2004), anonymous functions and namespaces in PHP 5.3 
-(2009), and traits in PHP 5.4 (2012). 
+PHP زبانی انعطاف پذیر و پویا است که از تکنیک‌های برنامه‌نویسی مختلفی پشتیبانی می‌کند. طی سال‌ها تغییرات زیادی در آن ایجاد شده است که می‌توان به موارد زیر اشاره کرد:
 
-### Object-oriented Programming
+* مدل شی‌گرا در نسخه‌ی 5.0 (سال ۲۰۰۴)
+* توابع بی‌نام (anonymous function) و فضای‌نام (namespace) در نسخه‌ی 5.3 (سال ۲۰۰۹)
+* ویژگی‌‌های خاص (traits) در نسخه‌ی 5.4 (سال ۲۰۱۲)
 
-PHP has a very complete set of object-oriented programming features including support for classes, abstract classes,
-interfaces, inheritance, constructors, cloning, exceptions, and more.
 
-* [Read about Object-oriented PHP][oop]
-* [Read about Traits][traits]
+### برنامه‌نویسی شی‌گرا
 
-### Functional Programming
+ویژگ‌های بسیاری از مدل برنامه‌نویسی شی‌گرا در PHP پشتیبانی می‌شوند از جمله کلاس‌ها (Classes)، کلاس‌های انتزاعی (Abstract Classes)، رابط‌ها (Interfaces)، وراثت (Inheritance)، سازنده‌ها (Constructors)، کپی‌کردن (Cloning)، استثناها (Exceptions) و بسیاری دیگر.
 
-PHP supports first-class function, meaning that a function can be assigned to a variable. Both user-defined and built-in
-functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
-functions (feature called Higher-order functions) and function can return other functions.
+* [درباره‌ی شی‌گرایی در PHP بیشتر بدانید][oop]
+* [درباره‌ی Traits بیشتر بدانید][traits]
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code focus
-on iteration.
+### برنامه‌نویسی تابعی
 
-New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
+PHP از توابعی پشتیبانی می‌کند که می‌توانند به متغیرها انتساب داده شوند. چه توسط کاربر تعریف شده باشند چه داخلی باشند، می‌توانند توسط یک متغیر فراخوانی شوند. توابع می‌توانند به عنوان یک آرگومان به سایر توابع فرستاده شوند (قابلیتی که به آن توابع مرتبه-بالا گفته می‌شود) و هر تابعی می‌تواند توابعی دیگری را به عنوان خروجی بازگرداند.
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+بازگشت (Recursion)، قابلیتی که به یک تابع اجازه می‌دهد خود را فراخوانی کند، توسط زبان پشتیبانی می‌شود اما بیشتر کد PHP روی تکرار (Iteration) تاکید دارد.
 
-* Continue reading on [Functional Programming in PHP](/pages/Functional-Programming.html)
-* [Read about Anonymous Functions][anonymous-functions]
-* [Read about the Closure class][closure-class]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about Callables][callables]
-* [Read about dynamically invoking functions with `call_user_func_array`][call-user-func-array]
+توابع بی‌نام جدید (که از Closure پشتیبانی می‌کنند) از PHP 5.3 به بعد (۲۰۰۹) وجود دارند.
 
-### Meta Programming
+نسخه‌ی 5.4 از PHP قابلیت اتصال Closure به قلمرو شی (Object's Scope) را اضافه کرده و همچنین پشتیبانی از فراخوانی‌هایی با توابع بی‌نام را بهبود بخشیده است.
 
-PHP supports various forms of meta-programming through mechanisms like the Reflection API and Magic Methods. There are
-many Magic Methods available like `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()`, etc. that allow
-developers to hook into class behavior. Ruby developers often say that PHP is lacking `method_missing`, but it is
-available as `__call()` and `__callStatic()`.
+* ادامه‌ی مطالعه‌ی [برنامه‌نویسی تابعی در PHP](/pages/Functional-Programming.html)
+* [درباره‌ی توابع بی‌نام بیشتر بدانید][anonymous-functions]
+* [درباره‌ی کلاس Closure بیشتر بدانید][closure-class]
+* [اطلاعات بیشتر درباره‌ی Closure RFC][closures-rfc]
+* [درباره‌ی فراخوانی‌ها بیشتر بدانید][callables]
+* [درباره‌ی فراخوانی پویا توسط 'call_user_func_array' بیشتر بدانید][call-user-func-array]
 
-* [Read about Magic Methods][magic-methods]
-* [Read about Reflection][reflection]
+### برنامه‌نویسی Meta
+
+از طریق مکانیسم‌هایی مانند Reflection API و Magic Meghods است که PHP از این سبک برنامه‌نویسی پشتیبانی می‌کند. متدهای مختلفی مانند '()get__'و '()set__'و '()clone__'و '()toString__'و '()invoke__' وجود دارند که به توسعه‌دهندگان اجازه می‌دهند رفتار داخلی یک کلاس را تغییر دهند. توسعه‌دهندگان Ruby اغلب می‌گویند PHP از نبود 'method_missing' رنج می‌برد در حالی که این عملکرد توسط '()call__' و '()callStatic__' قابل دسترسی است.
+
+* [درباره‌ی Magic Methods بیشتر بدانید][magic-methods]
+* [درباره‌ی Reflection بیشتر بدانید][reflection]
 
 [namespaces]: http://php.net/manual/en/language.namespaces.php
 [overloading]: http://php.net/manual/en/language.oop5.overloading.php

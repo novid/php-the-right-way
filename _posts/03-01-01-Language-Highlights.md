@@ -1,5 +1,6 @@
 ---
+title: قابلیت‌های زبان
 anchor: language_highlights
 ---
 
-# Language Highlights {#language_highlights_title}
+# قابلیت‌های زبان {#language_highlights_title}

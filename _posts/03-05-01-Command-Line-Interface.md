@@ -1,25 +1,26 @@
 ---
+title: رابط خط فرمان
 isChild: true
 anchor: command_line_interface
 ---
 
-## Command Line Interface {#command_line_interface_title}
+## رابط خط فرمان {#command_line_interface_title}
 
-PHP was created to write web applications, but is also useful for scripting command line interface (CLI) programs. Command line PHP programs can help automate common tasks like testing, deployment, and application administrivia.
+هدف اصلی از توسعه‌ی PHP ایجاد نرم‌افزارهای تحت وب است اما می‌توان از آن در نرم‌افزارهای خط فرمان (CLI) استفاده کرد. برنامه‌های خط فرمان مبتنی بر PHP می‌توانند در تست، توسعه و مدیریت نرم‌افزار، مورد استفاده قرار گیرند.
 
-CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web GUI for it. Just be sure not to put your CLI PHP scripts in your public web root!
+این گونه نرم‌افزارها بسیار قدرتمند هستند چرا که شما می‌توانید به صورت مستقیم با کد ارتباط برقرار کنید و نیازی به رابط گرافیکی تحت وب نیست، فقط اطمینان حاصل کنید نرم‌افزار خط فرمان شما در محیط عمومی قرار نداشته باشد!
 
-Try running PHP from your command line:
+اجرای PHP از خط فرمان:
 
 {% highlight bash %}
 > php -i
 {% endhighlight %}
 
-The `-i` option will print your PHP configuration just like the [`phpinfo`][phpinfo] function. 
+گزینه `i-` تنظیمات مجیط PHP را نمایش می‌دهد درست مانند تابع [`phpinfo`][phpinfo].
 
-The `-a` option provides an interactive shell, similar to ruby's IRB or python's interactive shell. There are a number of other useful [command line options][cli-options], too.
+گزینه `a-` یک پوسته (Shell) تعاملی را فراهم می‌آورد، شبیه به IRB در Ruby یا پوسته‌ی تعاملی در Python. همچنین [گزینه‌های][cli-options] کاربردی دیگری نیز وجود دارند.
 
-Let's write a simple "Hello, $name" CLI program. To try it out, create a file named `hello.php`, as below.
+بیایید یک برنامه‌ی ساده "Hello, $name" بنویسیم. جهت آزمایش، فایل `hello.php` را طبق خطوط زیر ایجاد کنید.
 
 {% highlight php %}
 <?php
@@ -31,11 +32,11 @@ $name = $argv[1];
 echo "Hello, $name\n";
 {% endhighlight %}
 
-PHP sets up two special variables based on the arguments your script is run with. [`$argc`][argc] is an integer variable containing the argument *count* and [`$argv`][argv] is an array variable containing each argument's *value*. The first argument is always the name of your PHP script file, in this case `hello.php`.
+بر اساس آرگومان‌هایی که اسکریپت شما با آن اجرا می‌شود، PHP دو متغیر مخصوص را راه‌اندازی می‌کند. [`argc$`][argc] یک متغیر عددی که *تعداد* آرگومان‌ها را مشخص می‌کند و [`argv$`][argv] یک متغیر از نوع آرایه که *مقدار* هر آرگومان را ذخیره می‌کند. اولین آرگومان همیشه نام فایل اسکریپت است، در اینجا `hello.php`.
 
-The `exit()` expression is used with a non-zero number to let the shell know that the command failed. Commonly used exit codes can be found [here][exit-codes]
+عبارت `()exit` به همراه یک عدد غیر صفر به کار رفته است که به پوسته اعلام می‌کند فرمان دریافت‌شده نامعتبر است. کدهای متداول برای این عبارت از [این قسمت][exit-codes] قابل دسترسی هستند.
 
-To run our script, above, from the command line:
+برای اجرای اسکریپت بالا، از خط فرمان:
 
 {% highlight bash %}
 > php hello.php
@@ -45,8 +46,8 @@ Hello, world
 {% endhighlight %}
 
 
- * [Learn about running PHP from the command line][php-cli]
- * [Learn about setting up Windows to run PHP from the command line][php-cli-windows]
+ * [درباره‌ی اجرای PHP از خط فرمان بیشتر بدانید][php-cli]
+ * [درباره‌ی اجرای PHP از خطر فرمان در سیستم عامل ویندوز بیشتر بدانید][php-cli-windows]
 
 [phpinfo]: http://php.net/manual/en/function.phpinfo.php
 [cli-options]: http://www.php.net/manual/en/features.commandline.options.php

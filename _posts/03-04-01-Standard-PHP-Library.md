@@ -1,13 +1,13 @@
 ---
-title:   Standard PHP Library
+title: کتابخانه‌ی استاندارد PHP
 isChild: true
 anchor: standard_php_library
 ---
 
-## Standard PHP Library {#standard_php_library_title}
+## کتابخانه‌ی استاندارد PHP {#standard_php_library_title}
 
-The Standard PHP Library (SPL) is packaged with PHP and provides a collection of classes and interfaces. It is made up primarily of commonly needed datastructure classes (stack, queue, heap, and so on), and iterators which can traverse over these datastructures or your own classes which implement SPL interfaces.
+کتابخانه‌ی استاندارد PHP یا همان SPL مجموعه‌ای از کلاس‌ها و رابط‌ها را ارایه می‌دهد. از معمول‌ترین ساختارداده‌های مورد نیاز (پُشته، صَف و ...) تشکیل شده است و تکرارشونده‌ها (Iterators) که اجازه می‌دهند این ساختارهای داده مورد پیمایش قرار گیرند یا اینکه کلاس‌های خود شما وظیفه‌ی پیاده‌سازی این عملکرد‌ها را بر عهده می‌گیرند.
 
-* [Read about the SPL][spl]
+* [درباره‌ی SPL بیشتر بدانید][spl]
 
 [spl]: http://php.net/manual/en/book.spl.php 
