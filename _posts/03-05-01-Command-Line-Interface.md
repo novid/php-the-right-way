@@ -16,7 +16,7 @@ anchor: command_line_interface
 > php -i
 {% endhighlight %}
 
-گزینه `i-` تنظیمات مجیط PHP را نمایش می‌دهد درست مانند تابع [`phpinfo`][phpinfo].
+گزینه `i-` تنظیمات محیط PHP را نمایش می‌دهد درست مانند تابع [`phpinfo`][phpinfo].
 
 گزینه `a-` یک پوسته (Shell) تعاملی را فراهم می‌آورد، شبیه به IRB در Ruby یا پوسته‌ی تعاملی در Python. همچنین [گزینه‌های][cli-options] کاربردی دیگری نیز وجود دارند.
 
