@@ -1,39 +1,34 @@
 ---
+title: راهنمای سبک کدنویسی
 anchor: code_style_guide
 ---
 
-# Code Style Guide  {#code_style_guide_title}
+# راهنمای سَبک کدنویسی  {#code_style_guide_title}
 
-The PHP community is large and diverse, composed of innumerable libraries, frameworks, and components. It is common for
-PHP developers to choose several of these and combine them into a single project. It is important that PHP code adhere
-(as close as possible) to a common code style to make it easy for developers to mix and match various libraries for
-their projects.
+جامعه‌ی PHP بزرگ و پراکنده است که از کتابخانه‌ها، فریم‌ورک‌ها و اجزای گوناگونی تشکیل شده است. برای توسعه‌دهندگان PHP امری طبیعی است که بخشی از این ابزار را در پروژه‌های خود به کار ببرند. از این رو، بسیار مهم است که کد PHP از یک سبک استاندارد (تا آنجا که امکان دارد) طبعیت کند تا توسعه‌دهندگان بتوانند به سادگی از کتابخانه‌های مختلف در پروژه‌ی خود استفاده کنند.
 
-The [Framework Interop Group][fig] has proposed and approved a series of style recommendations. Not all of them related 
-to code-style, but those that do are [PSR-0][psr0], [PSR-1][psr1], [PSR-2][psr2] and [PSR-4][psr4]. These recommendations 
-are merely a set of rules that some projects like Drupal, Zend, Symfony, CakePHP, phpBB, AWS SDK, FuelPHP, Lithium, 
-etc are starting to adopt. You can use them for your own projects, or continue to use your own personal style.
+[گروه تعاملی فریم‌ورک PHP][fig] مجموعه‌ای از سبک‌ها را تهیه و آماده کرده است. تمام آن‌ها مربوط به کدنویسی نمی‌شوند، اما آن‌هایی که هستند عبارتند از:
+* [PSR-0][psr0]
+* [PSR-1][psr1]
+* [PSR-2][psr2]
+* [PSR-4][psr4]
+این توصیه‌ها تقریبا مجموعه‌ای از قوانین هستند که پروژه‌هایی نظیر Drupal، Zend، Symfony، CakePHP و بسیاری دیگر از آن‌ها استفاده می‌کنند. شما می‌توانید از آن‌ها در پروژه‌های خود استفاده کنید، یا همان سبک کدنویسی خود را ادامه دهید.
 
-Ideally you should write PHP code that adheres to a known standard. This could be any combination of PSR's, or one 
-of the coding standards made by PEAR or Zend. This means other developers can easily read and work with your code, 
-and applications that implement the components can have consistency even when working with lots of third-party code. 
+در حقیقت باید طوری کد بنویسید که از یک استاندارد شناخته‌شده طبعیت کند. این استاندارد می‌تواند هر ترکیبی از PSRها یا یکی از استانداردهای ایجاد شده توسط PEAR یا Zend باشد. این بدان معنی است که سایر توسعه‌دهندگان به سادگی بتوانند با کد شما ارتباط برقرار کنند، و نرم‌افزارهایی که از اجزای جداگانه تشکیل شده‌اند با یکدیگر سازگاری داشته باشند.
 
-* [Read about PSR-0][psr0]
-* [Read about PSR-1][psr1]
-* [Read about PSR-2][psr2]
-* [Read about PSR-4][psr4]
-* [Read about PEAR Coding Standards][pear-cs]
-* [Read about Zend Coding Standards][zend-cs]
-* [Read about Symfony Coding Standards][symfony-cs]
+* [درباره PSR-0 بیشتر بدانید][psr0]
+* [درباره PSR-1 بیشتر بدانید][psr1]
+* [درباره PSR-2 بیشتر بدانید][psr2]
+* [درباره PSR-4 بیشتر بدانید][psr4]
+* [استانداردهای کدنویسی PEAR][pear-cs]
+* [استانداردهای کدنویسی Zend][zend-cs]
+* [استانداردهای کدنویسی Symfony][symfony-cs]
 
-You can use [PHP_CodeSniffer][phpcs] to check code against any one of these recommendations, and plugins for text editors 
-like [Sublime Text 2][st-cs] to be given real time feedback. 
+شما می‌توانید از ابزاری مانند [PHP CodeSniffer][phpcs] برای بررسی هر یک از این استانداردها، یا از افزونه‌هایی برای ویرایشگرهای متن مانند [Sublime Text 2][st-cs] استفاده کنید.
 
-Use Fabien Potencier's [PHP Coding Standards Fixer][phpcsfixer] to automatically modify your code syntax so that it
-conforms to these standards, saving you from fixing each problem by hand.
+همچنین ابزار [PHP Coding Standards Fixer][phpcsfixer] که توسط Fabien Potencier توسعه داده شده، به صورت خودکار کد شما را نسبت به این استانداردها بررسی می‌کند و تغییرات لازم را انجام می‌دهد، لازم هم نیست شما این کار را به صورت دستی انجام دهید.
 
-English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily readable 
-by all current and future parties who may be working on the codebase.
+انگلیسی زبان اصلی برای تمام نمادها و ساختار کد است. کامنت‌ها می‌توانند به هر زبانی که برنامه‌نویسان در پروژه با آن آشنا هستند، نوشته شوند.
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
