@@ -683,8 +683,10 @@ blockquote {
   margin-left: 20px !important;
   padding-left: 20px !important;
   color: #999999;
+  font-family: monospace;
   font-size: 16px;
   font-style: italic;
+  text-align: left;
 }
 blockquote :last-child {
   margin-bottom: 0px !important;
