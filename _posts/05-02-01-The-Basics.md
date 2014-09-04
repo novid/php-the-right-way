@@ -1,13 +1,11 @@
 ---
+title: مفاهیم مقدماتی
 isChild: true
 anchor: the_basics
 ---
 
-## The Basics {#the_basics_title}
+## مفاهیم مقدماتی {#the_basics_title}
 
-PHP is a vast language that allows coders of all levels the ability to produce code not only quickly, but efficiently. 
-However while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor 
-of short cuts and/or bad habits. To help combat this common issue, this section is aimed at reminding coders of the 
-basic coding practices within PHP.
+زبانی به وسعت PHP نه تنها به تمام برنامه‌نویسان اجازه‌ی کدنویسی سریع، بلکه این کار را بهینه انجام می‌دهد. البته هر چه بیشتر با این زبان آشنا شده و پیش می‌رویم مفاهیم مقدماتی که در ابتدا یاد گرفتیم را بر حسب عادت‌های بد یا روش‌های میانبر، فراموش می‌کنیم. برای مقابله با این مساله، در ادامه این مفاهیم را مرور خواهیم کرد.
 
-* Continue reading on [The Basics](/pages/The-Basics.html)
+* ادامه‌ی مطالعه [مقدمات زبان][(/pages/The-Basics.html)]

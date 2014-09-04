@@ -1,70 +1,49 @@
 ---
-title: Working with UTF-8
+title: کار با UTF-8
 isChild: true
 anchor: php_and_utf8
 ---
 
-## Working with UTF-8 {#php_and_utf8_title}
+## کار با UTF-8 {#php_and_utf8_title}
 
-_This section was originally written by [Alex Cabal](https://alexcabal.com/) over at 
-[PHP Best Practices](https://phpbestpractices.org/#utf-8) and has been used as the basis for our own UTF-8 advice_.
+محتوای اولیه‌ی این بخش توسط [Alex Cabal](https://alexcabal.com/) در مجموعه‌ی [بهترین عادت‌های کدنویسی در PHP](https://phpbestpractices.org/#utf-8) نوشته شده است که در اینجا به عنوان مقدمه‌ی مقاله‌ی ما قرار دارد.
 
-### There's no one-liner. Be careful, detailed, and consistent.
+### راهکار ثابتی وجود ندارد. دقت کرده، به جزییات توجه کنید و یکپارچه عمل کنید.
 
-Right now PHP does not support Unicode at a low level. There are ways to ensure that UTF-8 strings are processed OK, 
-but it's not easy, and it requires digging in to almost all levels of the web app, from HTML to SQL to PHP. We'll aim 
-for a brief, practical summary.
+هم اکنون PHP در سطح پایین از Unicode پشتیبانی نمی‌کند. روش‌هایی وجود دارد تا اطمینان حاصل کنیم تمام رشته‌های UTF-8 به درستی پردازش می‌شوند اما این روش‌ها آسان نیستند و لایه‌های مختلفی از یک نرم‌افزار تحت وب را شامل می‌شوند، از HTML به SQL به PHP. در ادامه آن‌ها را توضیح می‌دهیم.
 
-### UTF-8 at the PHP level
+### UTF-8 در PHP
 
-The basic string operations, like concatenating two strings and assigning strings to variables, don't need anything 
-special for UTF-8. However most string functions, like `strpos()` and `strlen()`, do need special consideration. These 
-functions often have an `mb_*` counterpart: for example, `mb_strpos()` and `mb_strlen()`. These `mb_*` strings are made 
-available to you via the [Multibyte String Extension], and are specifically designed to operate on Unicode strings.
+عملیات پایه روی رشته‌ها، مانند چسباندن دو رشته به یکدیگر یا تخصیص به متغیرها، به عملکرد خاصی رو UFT-8 احتیاج ندارد. با این وجود، بیشتر توابع رشته‌ای، مانند `()strpos` و `()strlen`، به توجه خاصی نیازمند هستند. این توابع معمولا یک معادل `*_mb` نیز دارند: مانند `()mb_strpos` و `()mb_strlen`. توابع `*_mb` با استفاده از [افزونه‌ی Multibyte String] قابل دسترس هستند و به طور خاص برای کار روی رشته‌های Unicode طراحی شده‌اند.
 
-You must use the `mb_*` functions whenever you operate on a Unicode string. For example, if you use `substr()` on a 
-UTF-8 string, there's a good chance the result will include some garbled half-characters. The correct function to use 
-would be the multibyte counterpart, `mb_substr()`.
+هر زمان که با رشته‌های Unicode سروکار دارید باید از توابع `*_mb` استفاده کنید. اگر از `()substr` در یک رشته‌ی UTF-8 استفاده کنید، به احتمال زیاد خروجی شامل کاراکترهای آشفته خواهد بود. در این حالت باید از معادل این تابع یعنی `()mb_substr` استفاده کنید.
 
-The hard part is remembering to use the `mb_*` functions at all times. If you forget even just once, your Unicode 
-string has a chance of being garbled during further processing.
+مشکل اینجاست که باید یادمان باشد در تمام مدت پروژه از توابع `*_mb` استفاده کنیم. اگر حتی یکبار هم فراموش کنید، احتمال دارد که رشته‌ی Unicode شما در پردازش‌های بعدی دچار آشفتگی شود.
 
-Not all string functions have an `mb_*` counterpart. If there isn't one for what you want to do, then you might be out 
-of luck.
+البته تمام توابع رشته‌ای معادل `*_mb` ندارند و این از بدشانسی شماست که برای عملکرد مورد نظرتان، این معادل‌ها وجود نداشته باشند.
 
-You should use the `mb_internal_encoding()` function at the top of every PHP script you write (or at the 
-top of your global include script), and the `mb_http_output()` function right after it if your script is outputting to 
-a browser. Explicitly defining the encoding of your strings in every script will save you a lot of headaches down the 
-road.
+باید از تابع `()mb_internal_encoding` در ابتدای هر اسکریپت PHP (یا اسکریپت سراسری) و از تابع `()mb_http_output` درست بعد از اینکه اسکریپت خروجی را به مرورگر می‌فرستد، استفاده کنید. اینکار موجب می‌شود که در آینده از مشکلات بسیاری جلوگیری کنید.
 
-Additionally, many PHP functions that operate on strings have an optional parameter letting you specify the character 
-encoding. You should always explicitly indicate UTF-8 when given the option. For example, `htmlentities()` has an 
-option for character encoding, and you should always specify UTF-8 if dealing with such strings. Note that as of PHP 5.4.0, UTF-8 is the default encoding for `htmlentities()` and `htmlspecialchars()`.
+به علاوه، بسیاری از توابع رشته‌ای در PHP یک پارامتر اختیاری دریافت می‌کنند که نحوه‌ی کدگذاری کاراکترها را مشخص می‌کند. اگر این پارامتر را تعریف می‌کنید حتما باید UTF-8 باشد. برای نمونه، `()htmlentities` گزینه‌ای برای کدگذاری کاراکتر دارد و شما همیشه باید از UTF-8 برای آن استفاده کنید. توجه کنید که از PHP 5.4.0، کدگذاری پیشفرض کاراکترها برای `()htmlentities` و `()htmlspecialchars` با استفاده از UTF-8 صورت می‌گیرد.
 
-Finally, If you are building an distributed application and cannot be certain that the `mbstring` extension will be
-enabled, then consider using the [patchwork/utf8] Composer package. This
-will use `mbstring` if it is available, and fall back to non UTF-8 functions if not.
+در نهایت، اگر نرم‌افزار شما در سرورهای مختلفی قرار دارد و اطمینان ندارید که افزونه‌ی `mbstring` فعال خواهد بود، استفاده از بسته‌ی [patchwork/utf8] در Composer را مد نظر قرار دهید. این بسته در صورت فعال بودن `mbstring` از آن استفاده می‌کند، در غیر اینصورت از توابع عادی رشته‌ای استفاده خواهد کرد.
 
-[Multibyte String Extension]: http://php.net/manual/en/book.mbstring.php
+[افزونه‌ی Multibyte String]: http://php.net/manual/en/book.mbstring.php
 [patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
 
-### UTF-8 at the Database level
+### UTF-8 در MySQL
 
-If your PHP script accesses MySQL, there's a chance your strings could be stored as non-UTF-8 strings in the database 
-even if you follow all of the precautions above.
+اگر اسکریپت PHP شما به MySQL دسترسی دارد، احتمال دارد رشته‌های شما به صورت UTF-8 در پایگاه‌داده ذخیره نشوند، هر چند گام‌های بالا را انجام داده باشید.
 
-To make sure your strings go from PHP to MySQL as UTF-8, make sure your database and tables are all set to the 
-`utf8mb4` character set and collation, and that you use the `utf8mb4` character set in the PDO connection string. See 
-example code below. This is _critically important_.
+جهت اطمینان از ذخیره‌سازی رشته‌ها به صورت UTF-8، باید پایگاه‌داده و جدول‌های شما از ساختار `utf8mb4` پشتیبانی کنند و در رشته‌ی اتصال PDO نیز از `utf8mb4` استفاده کنید. به مثال زیر توجه کنید. این مورد _بسیار حایز اهمیت_ است.
 
-Note that you must use the `utf8mb4` character set for complete UTF-8 support, not the `utf8` character set! See 
-Further Reading for why.
+توجه کنید که باید از مجموعه کاراکتر `utf8mb4` جهت پشتیبانی کامل از UTF-8 استفاده کنید نه از `utf8`!. به قسمت مطاله‌ی بیشتر مراجعه کنید تا دلیل آن را بدانید.
 
-### UTF-8 at the browser level
+### UTF-8 در مرورگر
 
-Use the `mb_http_output()` function to ensure that your PHP script outputs UTF-8 strings to your browser. 
+از تابع `()mb_http_output` استفاده کنید تا اطمینان یابید اسکریپت PHP خروجی را به صورت UTF-8 به مرورگر می‌فرستد.
 
-The browser will then need to be told by the HTTP response that this page should be considered as UTF-8. The historic approach to doing that was to include the [charset `<meta>` tag](http://htmlpurifier.org/docs/enduser-utf8.html) in your page's `<head>` tag. This approach is perfectly valid, but setting the charset in the `Content-Type` header is actually [much faster](https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly).
+اینکار باعث می‌شود به مرورگر گفته شود صفحه را با توجه به ساختار UTF-8 نمایش دهد. روش قدیمی برای انجام اینکار استفاده از [تگ `<meta>` به همراه charset](http://htmlpurifier.org/docs/enduser-utf8.html) بود که در تگ `<head>` قرار می‌گرفت. این روش هم اکنون نیز معتبر است اما تنظیم این ویژگی در قسمت `Content-Type` از header بسیار [سریع‌تر](https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly) است.
 
 {% highlight php %}
 <?php
@@ -125,14 +104,14 @@ header('Content-Type: text/html; charset=utf-8');
 </html>
 {% endhighlight %}
 
-### Further reading
+### مطالعه‌ی بیشتر
 
-* [PHP Manual: String Operations](http://php.net/manual/en/language.operators.string.php)
-* [PHP Manual: String Functions](http://php.net/manual/en/ref.strings.php)
+* [مستندات PHP: عملیات رشته‌ای](http://php.net/manual/en/language.operators.string.php)
+* [مستندات PHP: توابع رشته‌ای](http://php.net/manual/en/ref.strings.php)
     * [`strpos()`](http://php.net/manual/en/function.strpos.php)
     * [`strlen()`](http://php.net/manual/en/function.strlen.php)
     * [`substr()`](http://php.net/manual/en/function.substr.php)
-* [PHP Manual: Multibyte String Functions](http://php.net/manual/en/ref.mbstring.php)
+* [مستندات PHP: توابع Multibyte String](http://php.net/manual/en/ref.mbstring.php)
     * [`mb_strpos()`](http://php.net/manual/en/function.mb-strpos.php)
     * [`mb_strlen()`](http://php.net/manual/en/function.mb-strlen.php)
     * [`mb_substr()`](http://php.net/manual/en/function.mb-substr.php)
@@ -140,8 +119,8 @@ header('Content-Type: text/html; charset=utf-8');
     * [`mb_http_output()`](http://php.net/manual/en/function.mb-http-output.php)
     * [`htmlentities()`](http://php.net/manual/en/function.htmlentities.php)
     * [`htmlspecialchars()`](http://www.php.net/manual/en/function.htmlspecialchars.php)
-* [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-* [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-* [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
+* [راهنمای UTF-8 در PHP](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
+* [Stack Overflow: چه عواملی PHP را ناسازگار با Unicode ساخته است؟](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+* [Stack Overflow: بهترین روش‌ها در PHP و MySQL درباره‌ی رشته‌های بین‌المللی](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+* [چگونگی پشتیبانی کامل از Unicode در MySQL](http://mathiasbynens.be/notes/mysql-utf8mb4)
 * [Brining Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)

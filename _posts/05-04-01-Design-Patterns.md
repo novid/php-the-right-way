@@ -1,17 +1,13 @@
 ---
+title: الگوهای طراحی
 isChild: true
 anchor: design_patterns
 ---
 
-## Design Patterns {#design_patterns_title}
+## الگوهای طراحی {#design_patterns_title}
 
-When you are building your application it is helpful to use common patterns in your code and common patterns for the
-overall structure of your project. Using common patterns is helpful because it makes it much easier to manage your code
-and lets other developers quickly understand how everything fits together.
+زمانی که نرم‌افزار خود را توسعه می‌دهید مرسوم است از الگوهای خاصی در کد و ساختار کلی پروژه استفاده کنید. استفاده از این الگوها بسیار مفید است چرا که نه تنها باعث می‌شود مدیریت کد آسان گردد بلکه درک نرم‌افزار شما برای سایر توسعه‌دهندگان نیز آسان می‌گردد.
 
-If you use a framework then most of the higher level code and project structure will be based on that framework, so a
-lot of the pattern decisions are made for you. But it is still up to you to pick out the best patterns to follow in the
-code you build on top of the framework. If, on the other hand, you are not using a framework to build your application
-then you have to find the patterns that best suit the type and size of application that you're building.
+اگر از یک فریم‌ورک استفاده می‌کنید پس بیشتر قسمت‌های کدنویسی و ساختار پروژه که بر اساس آن فریم‌ورک است، از پیش برایتان مشخص شده است. اما در نهایت تصمیم با شماست که کد خود را بر اساس آن فریم‌ورک پیش ببرید یا خیر. اگر هم از فریم‌ورک استفاده نمی‌کنید باید خود به دنبال الگوهایی باشید که با نوع و اندازه‌ (حجم) پروژه‌ی شما سازگار باشند.
 
-* Continue reading on [Design Patterns](/pages/Design-Patterns.html)
+[ادامه‌ی مطالعه درباره‌ی الگوهای طراحی](/pages/Design-Patterns.html)

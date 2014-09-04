@@ -1,5 +1,6 @@
 ---
+title: عادت‌های کدنویسی
 anchor: coding_practices
 ---
 
-# Coding Practices {#coding_practices_title}
+# عادت‌های کدنویسی {#coding_practices_title}
