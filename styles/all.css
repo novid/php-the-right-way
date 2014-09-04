@@ -3226,11 +3226,11 @@ select {
 
 /* page specific styles */
 .site-navigation li>a {
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 .site-navigation li ul a {
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 #php_and_utf8 ul:last-child {
