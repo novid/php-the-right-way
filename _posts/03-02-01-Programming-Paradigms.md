@@ -30,7 +30,7 @@ PHP از توابعی پشتیبانی می‌کند که می‌توانند ب
 
 نسخه‌ی 5.4 از PHP قابلیت اتصال Closure به قلمرو شی (Object's Scope) را اضافه کرده و همچنین پشتیبانی از فراخوانی‌هایی با توابع بی‌نام را بهبود بخشیده است.
 
-* ادامه‌ی مطالعه‌ی [برنامه‌نویسی تابعی در PHP](/pages/Functional-Programming.html)
+* ادامه‌ی مطالعه‌ی [برنامه‌نویسی تابعی در PHP](pages/Functional-Programming.html)
 * [درباره‌ی توابع بی‌نام بیشتر بدانید][anonymous-functions]
 * [درباره‌ی کلاس Closure بیشتر بدانید][closure-class]
 * [اطلاعات بیشتر درباره‌ی Closure RFC][closures-rfc]

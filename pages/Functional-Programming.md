@@ -1,25 +1,19 @@
 ---
 layout: page
-title: Functional Programming in PHP
+title: برنامه‌نویسی تابعی در PHP
 ---
 
-# Functional Programming in PHP
+# برنامه‌نویسی تابعی در PHP
 
-PHP supports first-class functions, meaning that a function can be assigned to a variable. Both user-defined and built-in 
-functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
-functions and a function can return other functions (a feature called higher-order functions).
+PHP از توابعی پشتیبانی می‌کند که می‌توانند به متغیرها انتساب داده شوند. چه توسط کاربر تعریف شده باشند چه داخلی باشند، می‌توانند توسط یک متغیر فراخوانی شوند. توابع می‌توانند به عنوان یک آرگومان به سایر توابع فرستاده شوند (قابلیتی که به آن توابع مرتبه-بالا گفته می‌شود) و هر تابعی می‌تواند توابعی دیگری را به عنوان خروجی بازگرداند.
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code focus
-is on iteration.
+بازگشت (Recursion)، قابلیتی که به یک تابع اجازه می‌دهد خود را فراخوانی کند، توسط زبان پشتیبانی می‌شود اما بیشتر کد PHP روی تکرار (Iteration) تاکید دارد.
 
-Anonymous functions (with support for closures) have been present since PHP 5.3 (2009).
+توابع بی‌نام جدید (که از Closure پشتیبانی می‌کنند) از PHP 5.3 به بعد (۲۰۰۹) وجود دارند.
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+نسخه‌ی 5.4 از PHP قابلیت اتصال Closure به قلمرو شی (Object's Scope) را اضافه کرده و همچنین پشتیبانی از فراخوانی‌هایی با توابع بی‌نام را بهبود بخشیده است.
 
-The most common usage of higher-order functions is when implementing a strategy pattern. The built-in `array_filter`
-function asks both for the input array (data) and a function (a strategy or a callback) used as a filter function on
-each array item.
+یکی از کاربردهای اصلی این توابع در زمان پیاده‌سازی الگوی استراتژی است. تابع از پیش تعریف شده‌ی `array_filter` یک آرایه به عنوان ورودی (داده) و یک تابع (یک استراتژی یا فراخوان) می‌گیرد که روی هر یک از خانه‌های آرایه اعمال می‌شود.
 
 {% highlight php %}
 <?php
@@ -41,12 +35,9 @@ $output = array_filter($input, function($item) {
 print_r($output);
 {% endhighlight %}
 
-A closure is an anonymous function that can access variables imported from the outside scope without using any global
-variables. Theoretically, a closure is a function with some arguments closed (e.g. fixed) by the environment when it is 
-defined. Closures can work around variable scope restrictions in a clean way.
+یک closure تابعی بی‌نام است که می‌تواند به متغیرهای خارج از حوزه‌ی خود دسترسی داشته بدون اینکه نیاز به متغیر سراسری باشد. در تعریف، closure تابعی است با چند آرگومان بسته (ثابت) توسط محیطی که در آن تعریف شده است. closure در محیط‌هایی که محدودیت برای متغیرها وجود دارد، کاربردی است.
 
-In the next example we use closures to define a function returning a single filter function for `array_filter`, out of
-a family of filter functions.
+در مثال بعد، از closure برای ایجاد تابعی استفاده می‌کنیم که یک به عنوان یک فیلتر برای `array_filter` به کار خواهد رفت.
 
 {% highlight php %}
 <?php
@@ -70,17 +61,13 @@ $output = array_filter($input, criteria_greater_than(3));
 print_r($output); // items > 3
 {% endhighlight %}
 
-Each filter function in the family accepts only elements greater than some minimum value. Single filter returned by 
-`criteria_greater_than` is a closure with `$min` argument closed by the value in the scope (given as an argument when 
-`criteria_greater_than` is called).
+هر فیلتر (تابع) تنها مقادیری را قبول می‌کند که از یک مقدار حداقل بیشتر هستند. تنها فیلتری که توسط `criteria_greater_than` باز می‌گردد closure است با آرگومان `min$` که در محیط تعریف شده است (که به عنوان آرگومان به `criteria_greater_than` موقع فراخوانی ارسال شده است).
 
-Early binding is used by default for importing `$min` variable into the created function. For true closures with late
-binding one should use a reference when importing. Imagine a templating or input validation library, where closure is 
-defined to capture variables in scope and access them later when the anonymous function is evaluated.
+این نوع فراخوانی (early binding) به صورت پیشفرض برای وارد کردن متغیر `min$` در تابع ساخته شده، به کار می‌رود. کتابخانه‌ای را در نظر بگیرید () که در آن از closure برای دسترسی به متغیرهایی استفاده می‌شود که در زمان فراخوانی تابعی بی‌نام می‌توان از آن‌ها استفاده کرد.
 
-* [Read about Anonymous functions][anonymous-functions]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about dynamically invoking functions with `call_user_func_array`][call-user-func-array]
+* [درباره‌ی توابع بی‌نام بیشتر بخوانید][anonymous-functions]
+* [جزیییات بیشتر درباره‌ی Closure RFC][closures-rfc]
+* [درباره‌ی فراخوانی پویا توابع با استفاده از `call_user_func_array` بیشتر بخوانید][call-user-func-array]
 
 [anonymous-functions]: http://www.php.net/manual/en/functions.anonymous.php
 [call-user-func-array]: http://php.net/manual/en/function.call-user-func-array.php
