@@ -10,15 +10,15 @@ anchor: php_and_utf8
 
 ### راهکار ثابتی وجود ندارد. دقت کرده، به جزییات توجه کنید و یکپارچه عمل کنید.
 
-هم اکنون PHP در سطح پایین از Unicode پشتیبانی نمی‌کند. روش‌هایی وجود دارد تا اطمینان حاصل کنیم تمام رشته‌های UTF-8 به درستی پردازش می‌شوند اما این روش‌ها آسان نیستند و لایه‌های مختلفی از یک نرم‌افزار تحت وب را شامل می‌شوند، از HTML به SQL به PHP. در ادامه آن‌ها را توضیح می‌دهیم.
+هم اکنون PHP در سطح پایین از یونیکد پشتیبانی نمی‌کند. روش‌هایی وجود دارد تا اطمینان حاصل کنیم تمام رشته‌های UTF-8 به درستی پردازش می‌شوند اما این روش‌ها آسان نیستند و لایه‌های مختلفی از یک نرم‌افزار تحت وب را شامل می‌شوند، از HTML به SQL به PHP. در ادامه آن‌ها را توضیح می‌دهیم.
 
 ### UTF-8 در PHP
 
-عملیات پایه روی رشته‌ها، مانند چسباندن دو رشته به یکدیگر یا تخصیص به متغیرها، به عملکرد خاصی رو UFT-8 احتیاج ندارد. با این وجود، بیشتر توابع رشته‌ای، مانند `()strpos` و `()strlen`، به توجه خاصی نیازمند هستند. این توابع معمولا یک معادل `*_mb` نیز دارند: مانند `()mb_strpos` و `()mb_strlen`. توابع `*_mb` با استفاده از [افزونه‌ی Multibyte String] قابل دسترس هستند و به طور خاص برای کار روی رشته‌های Unicode طراحی شده‌اند.
+عملیات پایه روی رشته‌ها، مانند چسباندن دو رشته به یکدیگر یا تخصیص به متغیرها، به عملکرد خاصی رو UFT-8 احتیاج ندارد. با این وجود، بیشتر توابع رشته‌ای، مانند `()strpos` و `()strlen`، به توجه خاصی نیازمند هستند. این توابع معمولا یک معادل `*_mb` نیز دارند: مانند `()mb_strpos` و `()mb_strlen`. توابع `*_mb` با استفاده از [افزونه‌ی Multibyte String] قابل دسترس هستند و به طور خاص برای کار روی رشته‌های یونیکد طراحی شده‌اند.
 
-هر زمان که با رشته‌های Unicode سروکار دارید باید از توابع `*_mb` استفاده کنید. اگر از `()substr` در یک رشته‌ی UTF-8 استفاده کنید، به احتمال زیاد خروجی شامل کاراکترهای آشفته خواهد بود. در این حالت باید از معادل این تابع یعنی `()mb_substr` استفاده کنید.
+هر زمان که با رشته‌های یونیکد سروکار دارید باید از توابع `*_mb` استفاده کنید. اگر از `()substr` در یک رشته‌ی UTF-8 استفاده کنید، به احتمال زیاد خروجی شامل کاراکترهای آشفته خواهد بود. در این حالت باید از معادل این تابع یعنی `()mb_substr` استفاده کنید.
 
-مشکل اینجاست که باید یادمان باشد در تمام مدت پروژه از توابع `*_mb` استفاده کنیم. اگر حتی یکبار هم فراموش کنید، احتمال دارد که رشته‌ی Unicode شما در پردازش‌های بعدی دچار آشفتگی شود.
+مشکل اینجاست که باید یادمان باشد در تمام مدت پروژه از توابع `*_mb` استفاده کنیم. اگر حتی یکبار هم فراموش کنید، احتمال دارد که رشته‌ی یونیکد شما در پردازش‌های بعدی دچار آشفتگی شود.
 
 البته تمام توابع رشته‌ای معادل `*_mb` ندارند و این از بدشانسی شماست که برای عملکرد مورد نظرتان، این معادل‌ها وجود نداشته باشند.
 
@@ -37,7 +37,7 @@ anchor: php_and_utf8
 
 جهت اطمینان از ذخیره‌سازی رشته‌ها به صورت UTF-8، باید پایگاه‌داده و جدول‌های شما از ساختار `utf8mb4` پشتیبانی کنند و در رشته‌ی اتصال PDO نیز از `utf8mb4` استفاده کنید. به مثال زیر توجه کنید. این مورد _بسیار حایز اهمیت_ است.
 
-توجه کنید که باید از مجموعه کاراکتر `utf8mb4` جهت پشتیبانی کامل از UTF-8 استفاده کنید نه از `utf8`!. به قسمت مطاله‌ی بیشتر مراجعه کنید تا دلیل آن را بدانید.
+توجه کنید که باید از مجموعه کاراکتر `utf8mb4` جهت پشتیبانی کامل از UTF-8 استفاده کنید نه از `utf8`! به قسمت مطاله‌ی بیشتر مراجعه کنید تا دلیل آن را بدانید.
 
 ### UTF-8 در مرورگر
 
@@ -106,12 +106,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 ### مطالعه‌ی بیشتر
 
-* [مستندات PHP: عملیات رشته‌ای](http://php.net/manual/en/language.operators.string.php)
-* [مستندات PHP: توابع رشته‌ای](http://php.net/manual/en/ref.strings.php)
+* [PHP Manual: String Operations](http://php.net/manual/en/language.operators.string.php)
+* [PHP Manual: String Functions](http://php.net/manual/en/ref.strings.php)
     * [`strpos()`](http://php.net/manual/en/function.strpos.php)
     * [`strlen()`](http://php.net/manual/en/function.strlen.php)
     * [`substr()`](http://php.net/manual/en/function.substr.php)
-* [مستندات PHP: توابع Multibyte String](http://php.net/manual/en/ref.mbstring.php)
+* [PHP Manual: Multibyte String Functions](http://php.net/manual/en/ref.mbstring.php)
     * [`mb_strpos()`](http://php.net/manual/en/function.mb-strpos.php)
     * [`mb_strlen()`](http://php.net/manual/en/function.mb-strlen.php)
     * [`mb_substr()`](http://php.net/manual/en/function.mb-substr.php)
@@ -119,8 +119,8 @@ header('Content-Type: text/html; charset=utf-8');
     * [`mb_http_output()`](http://php.net/manual/en/function.mb-http-output.php)
     * [`htmlentities()`](http://php.net/manual/en/function.htmlentities.php)
     * [`htmlspecialchars()`](http://www.php.net/manual/en/function.htmlspecialchars.php)
-* [راهنمای UTF-8 در PHP](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-* [Stack Overflow: چه عواملی PHP را ناسازگار با Unicode ساخته است؟](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-* [Stack Overflow: بهترین روش‌ها در PHP و MySQL درباره‌ی رشته‌های بین‌المللی](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [چگونگی پشتیبانی کامل از Unicode در MySQL](http://mathiasbynens.be/notes/mysql-utf8mb4)
+* [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
+* [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+* [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+* [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
 * [Brining Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)

@@ -29,7 +29,7 @@ echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . "\n"
 // Difference: 1 month, 6 days (total: 37 days)
 {% endhighlight %}
 
-On DateTime objects you can use standard comparison:
+روی شی DateTime می‌توانید از مقایسه‌های استاندارد استفاده کنید:
 {% highlight php %}
 <?php
 if ($start < $end) {
