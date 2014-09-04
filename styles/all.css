@@ -3101,10 +3101,10 @@ select {
   margin-bottom: 10px;
 }
 .site-navigation a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .site-navigation a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .site-navigation a.active {
   background-color: #ff9;
@@ -3222,4 +3222,17 @@ select {
     display: inline-block;
     float: none;
   }
+}
+
+/* page specific styles */
+.site-navigation li>a {
+    font-size: 1.5em;
+}
+
+.site-navigation li ul a {
+    font-size: 1.25em;
+}
+
+#php_and_utf8 ul:last-child {
+    direction: ltr;
 }
