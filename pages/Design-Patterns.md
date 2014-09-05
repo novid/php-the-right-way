@@ -1,21 +1,18 @@
 ---
 layout: page
-title: Design Patterns
+title: الگوهای طراحی
 ---
 
-# Design Patterns
+# الگوهای طراحی
 
-There are numerous ways to structure the code and project for your web application, and you can put as much or as little
-thought as you like into architecting. But it is usually a good idea to follow common patterns because it will make
-your code easier to manage and easier for others to understand.
+راه‌های متفاوتی برای ساختار دادن به کد و پروژه وب شما وجود دارند، و شما می‌توانید هر طور که می‌خواهید ساختار پروژه را در نظر بگیرید. اما اگر از الگوهای مناسبی برای کد و ساختار پروژه استفاده کنید هم مدیریت آن آسان می‌شود هم دیگران ارتباط بهتری با پروژه برقرار می‌کنند.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [الگوی معماری در ویکیپدیا](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [الگوی طراحی نرم‌افزار در ویکیپدیا](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 ## Factory
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates
-the object you want to use. Consider the following example of the factory pattern:
+یکی از پرکاربردترین الگوهای طراحی، factory نام دارد. در این الگو، خود کلاس شی مورد نظر شما را می‌سازد. مثال زیر را به عنوان یک الگوی factory در نظر بگیرید:
 
 {% highlight php %}
 <?php
@@ -50,22 +47,15 @@ $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 print_r($veyron->get_make_and_model()); // outputs "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way; the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile
-class. The second possible benefit is that if creating the object is a complicated job you can do all of the work in
-the factory, instead of repeating it every time you want to create a new instance.
+این کد از الگوی factory استفاده می‌کند تا یک شی از نوع اتومبیل بسازد. دو مزیت اصلی در این روش کدنویسی وجود دارد; اول اینکه اگر بخواهید کلاس اتومبیل را تغییر، نام‌گذاری مجدد یا جایگزین کنید تنها کافی است کد داخل factory را تغییر دهید، نه هر جا که از کلاس اتومبیل استفاده شده است. مزیت احتمالی دوم این است که اگر ساختن شی فرآیند پیچیده‌ای باشد شما می‌توانید تمام کار را در داخل factory انجام دهید، نه هر بار که خواستید یک نمونه شی جدید بسازید.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+استفاده از الگوی factory همیشه لازم (یا عاقلانه) نیست. مثال مطرح شده اینقدر ساده است که نیاز به این الگو ندارد اما اگر شما در حال ساخت پروژه‌ی بزرگی هستید به دردتان می‌خورد.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [الگوی Factory در ویکیپدیا](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Singleton
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and
-only one instance of a particular class. The singleton pattern enables us to do this.
+هنگام طراحی نرم‌افزارهای تحت وب، از لحاظ معماری و مفهومی بسیار معقول به نظر می‌رسد تا تنها به یک و فقط یک شی از کلاس خاصی دسترسی وجود داشته باشد. الگوی singleton به ما در این حالت کمک می‌کند.
 
 {% highlight php %}
 <?php
@@ -130,33 +120,27 @@ var_dump($anotherObj === Singleton::getInstance());      // bool(false)
 var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
-The code above implements the singleton pattern using a [*static* variable](http://php.net/language.variables.scope#language.variables.scope.static) and the static creation method `getInstance()`.
-Note the following:
+کد بالا الگوی singleton را با استفاده از یک [متغیر *ایستا*](http://php.net/language.variables.scope#language.variables.scope.static) و متد ایستا با نام `()getInstance` پیاده‌سازی می‌کند.
+به این موارد توجه کنید:
 
-* The constructor [`__construct`](http://php.net/language.oop5.decon#object.construct) is declared as protected to prevent creating a new instance outside of the class via the `new` operator.
-* The magic method [`__clone`](http://php.net/language.oop5.cloning#object.clone) is declared as private to prevent cloning of an instance of the class via the [`clone`](http://php.net/language.oop5.cloning) operator.
-* The magic method [`__wakeup`](http://php.net/language.oop5.magic#object.wakeup) is declared as private to prevent unserializing of an instance of the class via the global function [`unserialize()`](http://php.net/function.unserialize).
-* A new instance is created via [late static binding](http://php.net/language.oop5.late-static-bindings) in the static creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the example.
+* سازنده [`construct__`](http://php.net/language.oop5.decon#object.construct) به صورت protected تعریف شده است تا از ایجاد یک شی جدید خارج از کلاس با استفاده از عملگر `new` جلوگیری کند.
+* متد [`clone__`](http://php.net/language.oop5.cloning#object.clone) به صورت private تعریف شده است تا از کپی شدن شی با استفاده از عملگر [`clone`](http://php.net/language.oop5.cloning) جلوگیری کند.
+* متد [`wakeup__`](http://php.net/language.oop5.magic#object.wakeup) به صورت private تعریف شده است تا از unserialize شدن یک نمونه یا شی از کلاس با استفاده از تابع سراسری [`()unserialize`](http://php.net/function.unserialize) جلوگیری کند.
+* یک شی جدید با استفاده از [late static binding](http://php.net/language.oop5.late-static-bindings) در متد ایستا `()getInstance` با عملگر `static` ساخته شده است. این کار اجازه می‌دهد کلاس‌های دیگری از کلاس `Singleton` قابلیت ساخته‌شدن داشته باشند.
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration
-class) or a shared resource (such as an event queue).
+الگوی singleton زمانی بسیار مفید است که می‌خواهیم اطمینان یابیم تنها یک شی از کلاس مورد نظر در طول چرخه‌ی حیات نرم‌افزار وجود دارد. این زمانی اتفاق می‌افتد که شی سراسری (مانند یک کلاس جهت پیکربندی پروژه) یا منبعی اشتراکی (مانند یک صف رخداد) وجود داشته باشد.
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a
-singleton class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+در استفاده از این الگو باید احتیاط کنید چون حالتی با دسترسی سراسری در نرم‌افزار را به وجود می‌آورد، که منجر به کاهش قابلیت آزمایش روی کد می‌شود. در اکثر موارد، تزریق وابستگی (Dependency Injection) می‌تواند (و باید) به جای این الگو استفاده شود. استفاده از آن باعث می‌شود کد اضافه در نرم‌افزار ما بی‌دلیل به وجود نیاید زمانی که یک شی از یک منبع سراسری یا اشتراکی می‌خواهد استفاده کند.
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [الگوی Singleton در ویکیپدیا]
 
 ## Strategy
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for 
-instantiating a particular algorithm to have no knowledge of the actual implementation.
-There are several variations on the strategy pattern, the simplest of which is outlined below:
+با استفاده از الگوی strategy شما نحوه‌ی پیاده‌سازی برخی از الگوریتم‌ها را در کلاس اصلی پنهان می‌سازید و اجازه نمی‌دهید کلاس‌های مشتق شده چگونه پیاده‌سازی شدن این الگوریتم‌ها را بدانند.
+روش‌های پیاده‌سازی متفاوتی از این الگو وجود دارند که در ادامه به ساده‌ترین آن‌ها می‌پردازیم:
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe 
-just an array of data:
+اولین قطعه کد خانواده‌ای از الگوریتم‌ها را نشان می‌دهد که با استفاده از آن‌ها می‌توان آرایه‌ای مرتب شده از داده‌ها (مانند ساختار JSON) را ایجاد کرد:
+
 {% highlight php %}
 <?php
 
@@ -190,16 +174,12 @@ class ArrayOutput implements OutputInterface
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily 
-add new output types without affecting the client code.
+با استفاده از این روش شما روشی زیبا و تمیز در کد خود به وجود می‌آورید که به سایر توسعه‌دهندگان اجازه می‌دهد از آن استفاده کنند و نوع خروجی خود را بر اساس نیازشان بسازند بدون آنکه به کد اصلی لطمه‌ای وارد شود.
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](http://php.net/manual/en/language.oop5.typehinting.php) to ensure that the client which is utilising these behaviours is of the correct type in
-this case 'OutputInterface'.
+خواهید دید که هر کلاس 'output' چگونه OutputInterface را پیاده‌سازی می‌کند که دو هدف را دنبال می‌کند، اول آنکه قواعد ساده‌ای را به وجود می‌آورد که هر کلاس فرزند باید از آن تبعیت کند. دوم آنکه با پیاده‌سازی یک رابط همگانی که با استفاده از [Type Hinting](http://php.net/manual/en/language.oop5.typehinting.php) به وجود می‌آید اطمینان حاصل می‌کند هر کلاس فرزند که این ویژگی‌ها را پیاده‌سازی خواهد کرد، از نوع صحیحی خواهد بود که در این مورد 'OutputInterface' خواهد بود.
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+قطعه کد بعد مشخص می‌کند چگونه کلاسی که الگوریتم‌های اصلی را پیاده‌سازی می‌کند می‌تواند عملکرد آن را در  زمان اجرا تغییر دهد:
+
 {% highlight php %}
 <?php
 
@@ -219,9 +199,8 @@ class SomeClient
 }
 {% endhighlight %}
 
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'
-once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+کلاس بالا یک فیلد خصوصی دارد که در زمان اجرا باید از نوع 'OutputInterface' باشد تا با فراخوانی ()loadOutput متد ()load داخل آن صدا زده می‌شود.
+
 {% highlight php %}
 <?php
 
@@ -237,24 +216,21 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [الگوی Strategy در ویکیپدیا](http://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## Front Controller
 
-The front controller pattern is where you have a single entrance point for you web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+زمانی که تنها یک نقطه ورود به نرم‌افزار تحت وب وجود داشته باشد و تمام درخواست‌ها از آنجا مدیریت شود، از این الگو استفاده شده است. این قطعه کد مسیول بارگذاری تمام پیشنیازها، پردازش تمام درخواست‌ها و ارسال پاسخ به مرورگر است. این الگو می‌تواند بسیار مفید باشد چرا که استفاده از ساختار ماژولار در کد را ممکن می‌سازد و به شما محیطی مرکزی برای مدیریت تمام درخواست‌ها به وجود می‌آورد (مانند بررسی صحت داده‌ی ورودی).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [الگوی Front Controller در ویکیپدیا](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM lets you break up code into logical objects that serve very specific purposes. Models serve as a data access layer where data is fetched and returned in formats usable throughout your application. Controllers handle the request, process the data returned from models and load views to send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the web browser.
+الگوی MVC و خانواده‌های آن مانند HMVC و MVVM به شما اجازه می‌دهند کدتان را به قسمت‌های منطقی کوچکتری تقسیم کنید که هر کدام وظیفه‌ی خاصی انجام می‌دهند. Model به عنوان یک لایه‌ی دسترسی به داده عمل می‌کند که در آن داده طبق قالب‌های قابل استفاده در نرم‌افزار شما به آن فرستاده یا از آن بازمی‌گردد. Controller درخواست‌ها را مدیریت می‌کند، داده‌ی بازگشتی از Model را پردازش کرده و جهت ارسال پاسخ View را فراخوانی می‌کند. View همان قالب نهایی است که قرار است به عنوان پاسخ به مرورگر فرستاده شود (مانند html, xml و ...).
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC عمومی‌ترین مدل معماری نرم‌افزار در محبوب‌ترین [فریم‌ورک‌های PHP](https://github.com/codeguy/php-the-right-way/wiki/Frameworks) است.
 
-Learn more about MVC and its relatives:
+درباره‌ی MVC و هم خانواده‌های آن بیشتر بدانید:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)

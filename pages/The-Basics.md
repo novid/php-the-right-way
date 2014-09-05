@@ -281,7 +281,7 @@ echo ($a == 5) ? 'yay' : 'nay';
 echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // excess nesting, sacrificing readability
 {% endhighlight %}
 
-To 'return' a value with ternary operators use the correct syntax.
+به منظور بازگرداندن یک متغیر با استفاده از عملگرهای سه‌تایی از نحو صحیح آن استفاده کنید.
 
 {% highlight php %}
 <?php
