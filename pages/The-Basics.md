@@ -1,14 +1,13 @@
 ---
 layout: page
-title: The Basics
+title: مفاهیم مقدماتی
 ---
 
-# The Basics
+# مفاهیم مقدماتی
 
-## Comparison operators
+## عملگرهای مقایسه‌ای
 
-Comparison operators are an often overlooked aspect of PHP, which can lead to many unexpected outcomes. One such
-problem stems from strict comparisons (the comparison of booleans as integers).
+معمولا از کاربرد صحیح این عملگرها در PHP چشم‌پوشی می‌شود و همین امر نتایج غیرمنتظره‌ای را به وجود می‌آورد. یکی از این مشکلات ریشه در مقایسه‌ی نوع عددی با منطقی دارد.
 
 {% highlight php %}
 <?php
@@ -33,16 +32,14 @@ if (strpos('testing', 'test') !== false) {    // true, as strict comparison was 
 }
 {% endhighlight %}
 
-* [Comparison operators](http://php.net/manual/en/language.operators.comparison.php)
-* [Comparison table](http://php.net/manual/en/types.comparisons.php)
+* [عملگرهای مقایسه‌ای](http://php.net/manual/en/language.operators.comparison.php)
+* [جدول عملگرهای مقایسه‌ای](http://php.net/manual/en/types.comparisons.php)
 
-## Conditional statements
+## عبارت‌های شرطی
 
-### If statements
+### If
 
-While using 'if/else' statements within a function or class, there is a common misconception that 'else' must be used
-in conjunction to declare potential outcomes. However if the outcome is to define the return value, 'else' is not
-necessary as 'return' will end the function, causing 'else' to become moot.
+زمانی که از عبارت 'if/else' داخل تابع یا کلاس استفاده می‌شود، باور اشتباهی وجود دارد که حتما باید از 'else' در تمام موارد استفاده کنیم. اگر خروجی مقدار بازگشتی باشد در این صورت استفاده از 'else' ضرورتی ندارد چون که 'return' به تابع خاتمه می‌دهد.
 
 {% highlight php %}
 <?php
@@ -66,16 +63,16 @@ function test($a)
 }
 {% endhighlight %}
 
-* [If statements](http://php.net/manual/en/control-structures.if.php)
+* [عبارت شرطی If](http://php.net/manual/en/control-structures.if.php)
 
-### Switch statements
+### Switch
 
-Switch statements are a great way to avoid typing endless if's and elseif's, but there are a few things to be aware of:
+عبارت‌های Switch جایگزین مناسبی برای 'if' و 'elseif' تودرتو هستند، اما باید به مواردی درباره‌ی آن‌ها توجه کرد:
 
-- Switch statements only compare values, and not the type (equivalent to '==')
-- They Iterate case by case until a match is found. If no match is found, then the default is used (if defined)
-- Without a 'break', they will continue to implement each case until reaching a break/return
-- Within a function, using 'return' alleviates the need for 'break' as it ends the function
+- این عبارت‌ها تنها مقدار را مقایسه می‌کنند و نه نوع را (معادل با '==')
+- این عبارت‌ها مورد به مورد به جستجو پرداخته تا نتیجه مورد نظر یافت شود در غیر اینصورت از مقدار پیش‌فرض استفاده می‌شود
+- بدون 'break' این عبارت‌ها به اجرای تمام موردها پرداخته تا زمانی که به یک break یا return برسند
+- داخل تابع، استفاده از 'return' نیاز به 'break' را کاهش داده چرا که به تابع خاتمه می‌دهد
 
 {% highlight php %}
 <?php
@@ -99,13 +96,12 @@ function test($a)
 }
 {% endhighlight %}
 
-* [Switch statements](http://php.net/manual/en/control-structures.switch.php)
+* [عبارت Switch](http://php.net/manual/en/control-structures.switch.php)
 * [PHP switch](http://phpswitch.com/)
 
-## Global namespace
+## فضای نام‌گذاری سراسری
 
-When using namespaces, you may find that internal functions are hidden by functions you wrote. To fix this,
-refer to the global function by using a backslash before the function name.
+هنگامی که از فضای نام‌گذاری استفاده می‌کنیم، شاید متوجه شده باشید که دسترسی به توابع داخلی توسط توابع هم‌نامی که شما می‌نویسید از بین می‌رود. برای حل این مشکل، قبل از نام تابع یک '\' قرار دهید چرا که اینکار منجر به فراخوانی تابع از فضای نام‌گذاری سراسری می‌کند.
 
 {% highlight php %}
 <?php
@@ -124,17 +120,16 @@ function array()
 }
 {% endhighlight %}
 
-* [Global space](http://php.net/manual/en/language.namespaces.global.php)
-* [Global rules](http://php.net/manual/en/userlandnaming.rules.php)
+* [فضای سراسری](http://php.net/manual/en/language.namespaces.global.php)
+* [قوانین سراسری](http://php.net/manual/en/userlandnaming.rules.php)
 
-## Strings
+## رشته‌ها
 
-### Concatenation
+### چسباندن
 
-- If your line extends beyond the recommended line length (120 characters), consider concatenating your line
-- For readability it is best to use concatenation operators over concatenating assignment operators
-- While within the original scope of the variable, indent when concatenation uses a new line
-
+- اگر خطی از کد شما بیش از طول طبیعی (۱۲۰ کاراکتر) ادامه دارد، آن خط را به قسمت‌های مساوی تبدیل کنید
+- برای خوانایی کد بهتر است از عملگرهای الحاقی (مانند "string" . "string") به جای عملگرهای الحاقی - انتسابی (=.) استفاده کنید
+- در زمان تعریف متغیر که مقدار طولانی دارد بهتر است از چند خط برای مقدار آن استفاده شود و خط‌ها به صورت دندانه‌دار باشند
 
 {% highlight php %}
 <?php
@@ -149,20 +144,18 @@ $a = 'Multi-line example'      // concatenation operator (.)
     . 'of what to do';
 {% endhighlight %}
 
-* [String Operators](http://php.net/manual/en/language.operators.string.php)
+* [عملگرهای رشته‌ای](http://php.net/manual/en/language.operators.string.php)
 
-### String types
+### گونه‌های رشته‌ای
 
-String types are a constant feature within the PHP community, but hopefully this section will explain the
-differences between the string types and their benefits/uses.
+این گونه‌ها از ویژگی‌های ثابت در جامعه‌ی PHP هستند، اما این قسمت به توضیح گونه‌های مختلف رشته‌ای و مزایای آن‌ها اشاره دارد.
 
-#### Single quotes
+#### اعلان تکی (')
 
-Single quotes are the simplest way to define a string and are often the quickest. Their speed stems from PHP not
-parsing the string (does not parse for variables). They are best suited for:
+این اعلان‌ها ساده‌ترین و سریع‌ترین روش تعریف رشته‌ها هستند. سرعت آن‌ها ریشه در PHP و نه بررسی رشته‌ها (چرا که متغیرها را بررسی نمی‌کنند) دارد. بهتر است در این موارد استفاده شوند:
 
-- Strings that do not need to be parsed
-- Writing of a variable into plain text
+- رشته‌هایی که نیاز به تجزیه و تحلیل ندارند
+- نوشتن یا چاپ متغیر همانطور که هست
 
 {% highlight php %}
 <?php
@@ -175,16 +168,15 @@ echo 'This is my string, look at how pretty it is.';    // no need to parse a si
  */
 {% endhighlight %}
 
-* [Single quote](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.single)
+* [Single Quote](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.single)
 
-#### Double quotes
+#### اعلان دوتایی (")
 
-Double quotes are the Swiss army knife of strings, but are slower due to the string being parsed. They are best
-suited for:
+این اعلان‌ها درباره‌ی کار با رشته‌ها بسیار مفید و کاربردی، اما با توجه به عملیات تجزیه و تحلیل که صورت می‌دهند کندتر هستند. بهتر است در این موارد استفاده شوند:
 
-- Escaped strings
-- Strings with multiple variables and plain text
-- Condensing multi-line concatenation, and improving readability
+- رشته‌هایی که قصد 'Escape' کردن آن‌ها را داریم
+- رشته‌هایی که شامل چندین متغیر در داخل خود هستند
+- چسباندن رشته‌هایی که در چند خط پراکنده شده‌اند جهت خوانایی بیشتر
 
 {% highlight php %}
 <?php
@@ -198,9 +190,7 @@ echo "phptherightway is $adjective.\n I love learning $code!"  // Instead of mul
                                                                // enables us to use a parsable string
 {% endhighlight %}
 
-While using double quotes that contain variables, it is often the case that the variable will be touching another
-character. This will result in PHP not parsing the variable due to the variable being camouflaged. To fix this problem,
-wrap the variable within a pair of curly brackets.
+زمانی که با این اعلان‌ها کار می‌کنیم، ممکن است متغیرهایی وجود داشته باشند که داخل خود از کاراکترهای دیگری استفاده کرده باشند. این کار منجر به پنهان شدن متغیر می‌شود و PHP نمی‌تواند محتوای آن را به درستی نمایش دهد. برای حل این مشکل، می‌توان متغیر را داخل '{}' قرار داد.
 
 {% highlight php %}
 <?php
@@ -220,12 +210,11 @@ $juice = array('apple', 'orange', 'plum');
 echo "I drank some juice made of {$juice[1]}s";   // $juice[1] will be parsed
 {% endhighlight %}
 
-* [Double quotes](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
+* [Double Quotes](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
 
-#### Nowdoc syntax
+#### نحو دستور Nowdoc
 
-Nowdoc syntax was introduced in 5.3 and internally behaves the same way as single quotes except it is suited toward the
-use of multi-line strings without the need for concatenating.
+این ویژگی در نسخه‌ی 5.3 معرفی شده است و عملکردی مانند اعلان تکی (') دارد به جز اینکه می‌توان از آن در چند خط استفاده کرد بدون آنکه نیاز به چسباندن (الحاق) رشته‌ها باشد.
 
 {% highlight php %}
 <?php
@@ -246,12 +235,11 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-* [Nowdoc syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc)
+* [Nowdoc Syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc)
 
-#### Heredoc syntax
+#### نحو دستور Heredoc
 
-Heredoc syntax internally behaves the same way as double quotes except it is suited toward the use of multi-line
-strings without the need for concatenating.
+این دستور عملکردی مانند اعلان دوتایی (") دارد به جز اینکه می‌توان از آن در چند خط استفاده کرد بدون آنکه نیاز به چسباندن (الحاق) رشته‌ها باشد.
 
 {% highlight php %}
 <?php
@@ -274,12 +262,11 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-* [Heredoc syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc)
+* [Heredoc Syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc)
 
-## Ternary operators
+## عملگرهای سه‌تایی
 
-Ternary operators are a great way to condense code, but are often used in excess. While ternary operators can be
-stacked/nested, it is advised to use one per line for readability.
+استفاده از این عملگرها به کوتاه شدن کد کمک می‌کند، اما معمولا از آن‌ها بیش از حد استفاده می‌شود. توصیه می‌شود از این عملگرها در یک خط و به صورت جداگانه استفاده شود.
 
 {% highlight php %}
 <?php
@@ -287,7 +274,7 @@ $a = 5;
 echo ($a == 5) ? 'yay' : 'nay';
 {% endhighlight %}
 
-In comparison, here is an example that sacrifices all forms of readability for the sake of reducing the line count.
+در مقایسه، این نمونه کدی است که خوانا بودن را فدای تعداد خط می‌کند.
 
 {% highlight php %}
 <?php
@@ -308,7 +295,7 @@ return ($a == 5) ? 'yay' : 'nope';    // this example will return 'yay'
 
 {% endhighlight %}
 
-It should be noted that you do not need to use a ternary operator for returning a boolean value. An example of this would be.
+به یاد داشته باشید که برای بازگشت یک مقدار منطقی نیاز به استفاده از این عملگرها ندارید. برای نمونه می‌توان به مورد زیر اشاره کرد.
 
 {% highlight php %}
 <?php
@@ -322,11 +309,11 @@ return $a == 3; // Will return true or false if $a == 3
 
 {% endhighlight %}
 
-This can also be said for all operations(===, !==, !=, == etc).
+این مورد درباره‌ی سایر عملگرها نیز صادق است (=== و ==! و =! و == و ...)
 
-#### Utilising brackets with ternary operators for form and function
+#### استفاده از پرانتز به همراه عملگرهای سه‌تایی
 
-When utilising a ternary operator, brackets can play their part to improve code readability and also to include unions within blocks of statements. An example of when there is no requirement to use bracketing is:
+زمانی که از عملگر سه‌تایی استفاده می‌کنیم، پرانتزها می‌توانند به خوانایی بیشتر کد کمک کنند. برای نمونه کدی که نیاز به پرانتز ندارد:
 
 {% highlight php %}
 <?php
@@ -340,28 +327,25 @@ $a = 3;
 return $a == 3 ? "yay" : "nope"; // return yay or nope if $a == 3
 {% endhighlight %}
 
-Bracketing also affords us the capability of creating unions within a statement block where the block will be checked as a whole. Such as this example below which will return true if both ($a == 3 and $b == 4) are true and $c == 5 is also true.
+پرانتزگذاری باعث می‌شود بتوانیم قسمت‌های مختلف شرط را از یکدیگر جدا کنیم. مانند مثال زیر که زمانی مقدار صحیح برمی‌گرداند که هر دو عبارت (a$ == 3 && b$ == 4) و c$ == 5 صحیح باشند.
 
 {% highlight php %}
 <?php
 return ($a == 3 && $b == 4) && $c == 5;
 {% endhighlight %}
 
-Another example is the snippet below which will return true if ($a != 3 AND $b != 4) OR $c == 5.
+مثال دیگر کد زیر است که در صورتی صحیح بازمی‌گرداند که (a$ =! 3 AND b$ =! 4) یا (c$ == 5) صحیح باشد.
 
 {% highlight php %}
 <?php
 return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
 
-* [Ternary operators](http://php.net/manual/en/language.operators.comparison.php)
+* [عملگرهای سه‌تایی](http://php.net/manual/en/language.operators.comparison.php)
 
-## Variable declarations
+## تعریف متغیرها
 
-At times, coders attempt to make their code "cleaner" by declaring predefined variables with a different name. What
-this does in reality is to double the memory consumption of said script. For the example below, let us say
-an example string of text contains 1MB worth of data, by copying the variable you've increased the scripts execution to
-2MB.
+زمانی بود که برنامه‌نویسان برای خوانابودن کد خود متغیرهای بسیاری را تعریف می‌کردند. این کار در عمل باعث می‌شود حافظه‌ی بیشتری مصرف شود. برای نمونه کد زیر، فرض کنید یک رشته به صورت پیشفرض یک مگابایت حافظه می‌گیرد که اینکار با کپی کردن متغیر باعث می‌شود دو مگابایت حافظه مصرف شود.
 
 {% highlight php %}
 <?php
@@ -373,4 +357,4 @@ echo $about;
 echo 'A very long string of text';        // uses 1MB memory
 {% endhighlight %}
 
-* [Performance tips](https://developers.google.com/speed/articles/optimizing-php)
+* [نکاتی درباره‌ی بهبود سرعت](https://developers.google.com/speed/articles/optimizing-php)
