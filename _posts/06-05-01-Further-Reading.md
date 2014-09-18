@@ -1,11 +1,12 @@
 ---
+title: مطالعه بیشتر
 isChild: true
 anchor: further_reading
 ---
 
-## Further Reading {#further_reading_title}
+## مطالعه بیشتر {#further_reading_title}
 
-- [Learning about Dependency Injection and PHP](http://ralphschindler.com/2011/05/18/learning-about-dependency-injection-and-php)
+- [درباره‌ی Dependency Injection و PHP بدانید](http://ralphschindler.com/2011/05/18/learning-about-dependency-injection-and-php)
 - [What is Dependency Injection?](http://fabien.potencier.org/article/11/what-is-dependency-injection)
 - [Dependency Injection: An analogy](http://mwop.net/blog/260-Dependency-Injection-An-analogy.html)
 - [Dependency Injection: Huh?](http://net.tutsplus.com/tutorials/php/dependency-injection-huh/)

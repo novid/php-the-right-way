@@ -1,15 +1,14 @@
 ---
+title: مفهوم پایه
 isChild: true
 anchor: basic_concept
 ---
 
-## Basic Concept {#basic_concept_title}
+## مفهوم پایه {#basic_concept_title}
 
-We can demonstrate the concept with a simple, yet naive example.
+این مفهوم را می‌توان با یک نمونه ساده توضیح داد.
 
-Here we have a `Database` class that requires an adapter to speak to the database. We instantiate the
-adapter in the constructor and create a hard dependency. This makes testing difficult and means the `Database` class is
-very tightly coupled to the adapter.
+فرض کنید کلاس `Database` داریم که جهت استفاده از پایگاه‌داده به یک adapter نیاز دارد. adapter را در تابع سازنده نمونه‌سازی می‌کنیم. این کار عملیات آزمایش (test) را دشوار کرده و کلاس `Database` را به وجود adapter وابسته می‌سازد.
 
 {% highlight php %}
 <?php
@@ -28,7 +27,7 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-This code can be refactored to use Dependency Injection and therefore loosen the dependency.
+این کد می‌تواند طوری نوشته شود که این میزان وابستگی را کاهش دهد.
 
 {% highlight php %}
 <?php
@@ -47,6 +46,4 @@ class Database
 class MysqlAdapter {}
 {% endhighlight %}
 
-Now we are giving the `Database` class its dependency rather than it creating it itself. We could even create a method
-that would accept an argument of the dependency and set it that way, or if the `$adapter` property was `public` we could
-set it directly.
+در اینجا برای کلاس `Database` یک وابستگی تعریف می‌کنیم، به جای آنکه در داخل تابع آن را فراخوانی کنیم. همچنین می‌توانستیم تابع جداگانه‌ای در نظر بگیریم که بر اساس ورودی‌های وابستگی مورد نظر (adapter) عمل کند، یا اگر عملگر `adapter$` به صورت `public` بود می‌توانستیم آن را مستقیم تنظیم کنیم.

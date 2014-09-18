@@ -1,15 +1,11 @@
 ---
+title: ظرف وابستگی
 isChild: true
 anchor: containers
 ---
 
-## Containers {#containers_title}
+## ظرف وابستگی {#containers_title}
 
-The first thing you should understand about Dependency Injection Containers is that they are not the same thing as Dependency
-Injection. A container is a convenience utility that helps us implement Dependency Injection, however, they can be and often
-are misused to implement an anti-pattern, Service Location. Injecting a DI container as a Service Locator in to your classes arguably
-creates a harder dependency on the container than the dependency you are replacing. It also makes your code much less transparent
-and ultimately harder to test.
+اولین چیزی که باید درباره‌ی ظرف‌های وابستگی بدانید این است که آن‌ها با Dependency Injection تفاوت دارند. یک ظرف وابستگی، ابزاری است که به ما کمک می‌کند Dependency Injection را پیاده‌سازی کنیم، اگرچه از آن‌ها به اشتباه در موارد دیگر (Service Location) استفاده می‌شود که اینکار باعث ایجاد وابستگی‌های بیشتری در نرم‌افزار می‌شود.
 
-Most modern frameworks have their own Dependency Injection Container that allows you to wire your dependencies together through configuration.
-What this means in practice is that you can write application code that is as clean and de-coupled as the framework it is built on.
+اکثر فریم‌ورک‌ها ظرف مربوط به Dependency Injection خود را دارا هستند که به کاربر اجازه می‌دهد درست مانند همان فریم‌ورکی که از آن استفاده می‌کند، نرم‌افزار خود را پیاده‌سازی کند.

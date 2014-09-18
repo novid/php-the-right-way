@@ -3,12 +3,10 @@ title: Dependency Injection
 anchor: dependency_injection
 ---
 
-# Dependency Injection {#dependency_injection_title}
+# Dependency Injection  {#dependency_injection_title}
 
-From [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
+از [ویکیپدیا](http://en.wikipedia.org/wiki/Dependency_injection):
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it 
-> possible to change them, whether at run-time or compile-time.
+> Dependency Injection یک الگوی طراحی نرم‌افزار است که اجازه‌ی حذف وابستگی‌هایی را می‌دهد که به صورت دستی در کد وارد شده‌اند، چه در زمان اجرا چه در زمان کامپایل
 
-This quote makes the concept sound much more complicated than it actually is. Dependency Injection is providing a component 
-with its dependencies either through constructor injection, method calls or the setting of properties. It is that simple.
+تعریف بالا درک مفهوم ساده‌ی موجود را بسیار پیچیده می‌کند. Dependency Injection ،وابستگی‌های موجود برای یک شی را از طریق تابع سازنده، فراخوانی متد یا تنظیم ویژگی‌ها انجام می‌دهد، به همین سادگی.

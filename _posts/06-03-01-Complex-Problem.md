@@ -1,31 +1,24 @@
 ---
+title: مشکل پیچیده
 isChild: true
 anchor: complex_problem
 ---
 
-## Complex Problem {#complex_problem_title}
+## مشکل پیچیده {#complex_problem_title}
 
-If you have ever read about Dependency Injection then you have probably seen the terms *"Inversion of Control"* or *"Dependency Inversion Principle"*.
-These are the complex problems that Dependency Injection solves.
+اگر تا به حال درباره‌ی Dependency Injection مطلبی خوانده باشید با عبارت‌هایی مانند *"Inversion of Control"* یا *"Dependency Inversion Principle"* مواجه شده‌اید. این‌ها مشکل‌های پیچیده‌ای هستند که Dependency Injection آن‌ها را رفع می‌کند.
 
 ### Inversion of Control
 
-Inversion of Control is as it says, "inverting the control" of a system by keeping organisational control entirely separate from our objects.
-In terms of Dependency Injection, this means loosening our dependencies by controlling and instantiating them elsewhere in the system.
+این عبارت همانطور که از نامش پیداست با جدا نگاه‌داشتن کنترل از تمام شی‌ها، "کنترل را وارونه" می‌سازد. در تعریف Dependency Injection به این معناست که وابستگی‌های موجود را با نمونه‌سازی در قسمت‌های دیگر، ضعیف سازیم.
 
-For years, PHP frameworks have been achieving Inversion of Control, however, the question became, which part of control
-are you inverting, and where to? For example, MVC frameworks would generally provide a super object or base controller that other
-controllers must extend to gain access to its dependencies. This **is** Inversion of Control, however, instead of loosening
-dependencies, this method simply moved them.
+برای سال‌ها، فریم‌ورک‌های PHP این تکنیک را به کار گرفته‌اند، اگرچه پرسش این است که کدام قسمت کنترل را وارونه می‌سازید و به کجا؟ برای نمونه، فریم‌ورک‌های MVC معمولا یک شی پایه یا کنترل‌کننده‌ی پایه را به وجود می‌آورند که سایر کنترل‌کننده‌ها برای دسترسی به وابستگی‌های آن از این شی پایه ارث‌بری می‌کنند. این **همان** مفهوم وارونگی کنترل است، اگرچه به جای تضعیف وابستگی‌ها، این روش آن‌ها را منتقل می‌کند.
 
-Dependency Injection allows us to more elegantly solve this problem by only injecting the dependencies we need, when we need them,
-without the need for any hard coded dependencies at all.
+Dependency Injection به ما کمک می‌کند که این مشکل را با تعریف وابستگی‌هایی که تنها به آن‌ها نیاز داریم، رفع کنیم.
 
 ### Dependency Inversion Principle
 
-Dependency Inversion Principle is the "D" in the S.O.L.I.D set of object oriented design principles that states one should
-*"Depend on Abstractions. Do not depend on concretions."*. Put simply, this means our dependencies should be interfaces/contracts or abstract
-classes rather than concrete implementations. We can easily refactor the above example to follow this principle.
+این عبارت همان حرف "D" در مجموعه S.O.L.I.D در رابطه با طراحی شی‌گرا است که بیان می‌کند هر جز از سیستم باید *"به انتزاع وابسته باشد، نه به پیاده‌سازی خاص"*. ساده‌تر بگوییم، وابستگی‌ها باید Interface یا Abstract Class باشند تا یک پیاده‌سازی خاص. نمونه بالا را می‌توان به سادگی به این مفهوم تبدیل کرد.
 
 {% highlight php %}
 <?php
@@ -46,12 +39,8 @@ interface AdapterInterface {}
 class MysqlAdapter implements AdapterInterface {}
 {% endhighlight %}
 
-There are several benefits to the `Database` class now depending on an interface rather than a concretion.
+مزایای بسیاری در این کلاس `Database` وجود دارد که به یک Interface وابسته است تا به یک پیاده‌سازی خاص.
 
-Consider that you are working in a team and the adapter is being worked on by a colleague. In our first example, we would have
-to wait for said colleague to finish the adapter before we could properly mock it for our unit tests. Now that the dependency
-is an interface/contract we can happily mock that interface knowing that our colleague will build the adapter based on that contract.
+تصور کنید در تیمی کار می‌کنید که پیاده‌سازی adapter به عهده‌ی عضوی دیگر است. در اولین نمونه، باید منتظر بمانیم تا همکار ما کار روی adapter را تمام کرده سپس ما آزمایش مورد نظر را انجام دهیم. حالا که وابستگی به یک Interface وجود دارد با خیال راحت می‌توانیم به کار خود ادامه دهیم و اطمینان داشته باشیم که ناتمام بودن adapter روی کار ما تاثیر منفی نمی‌گذارد.
 
-An even bigger benefit to this method is that our code is now much more scalable. If a year down the line we decide that we
-want to migrate to a different type of database, we can write an adapter that implements the original interface and inject that instead,
-no more refactoring would be required as we can ensure that the adapter follows the contract set by the interface.
+مزیت بزرگ دیگری که در این روش وجود دارد این است که کد مقیاس‌پذیری بیشتری دارد. اگر سال بعد تصمیم بگیریم که از یک پایگاه‌داده‌ی دیگر استفاده کنیم تنها کافی است برای آن پایگاه‌داده بر اساس Interface فعلی یک adapter پیاده‌سازی کنیم که از تمام ویژگی‌های فعلی پشتیبانی می‌کند.
