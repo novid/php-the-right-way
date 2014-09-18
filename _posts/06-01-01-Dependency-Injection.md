@@ -1,5 +1,5 @@
 ---
-title: Dependency Injection
+title: تعریف وابستگی
 anchor: dependency_injection
 ---
 
