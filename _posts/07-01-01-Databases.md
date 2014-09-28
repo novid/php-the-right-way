@@ -1,35 +1,27 @@
 ---
-title: Databases
+title: پایگاه‌داده
 anchor: databases
 ---
 
-# Databases {#databases_title}
+# پایگاه داده {#databases_title}
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option **until PHP 5.1.0** was to use native drivers such as [mysqli], [pgsql], [mssql], etc. 
+بسیاری از مواقع کد شما از یک پایگاه‌داده استفاده می‌کند تا اطلاعات را ذخیره کند. شما با گزینه‌های مختلفی جهت تعامل با پایگاه‌داده رو‌به‌رو هستید. روش توصیه شده تا **نسخه PHP 5.1.0** استفاده از درایورهایی مانند [mysqli] و [pgsql] و [mssql] و ... بود.
 
-Native drivers are great if you are only using _one_ database in your application, but if, for example, you are using 
-MySQL and a little bit of MSSQL, or you need to connect to an Oracle database, then you will not be able to use the same
-drivers. You'll need to learn a brand new API for each database &mdash; and that can get silly.
+استفاده از این درایورها بسیار مناسب است به شرط آنکه برنامه‌ی شما تنها با _یک_ پایگاه‌داده سروکار داشته باشد، اگر،‌برای نمونه، به طور همزمان از MySQL و MSSQL استفاده می‌کنید، یا نیاز به برقراری ارتباط با Oracle دارید، آنگاه قادر نخواهید بود از این درایورها استفاده کنید. اینجاست که باید برای هر درایور کد جداگانه‌ای بنویسید &mdash; که این کار بیهوده‌ای است.
 
-## MySQL Extension 
+## افزونه‌ی MySQL
 
-The [mysql] extension for PHP is no longer in active development, and is [officially deprecated as of PHP 5.5.0], 
-meaning that it will be removed within the next few releases. If you are using any functions that start with `mysql_*`
-such as `mysql_connect()` and `mysql_query()` in your applications then these will simply not be available in later
-versions of PHP. This means you will be faced with a rewrite at some point down the line, so the best option is to 
-replace mysql usage with [mysqli] or [PDO] in your applications within your own development schedules so you won't be
-rushed later on. 
+افزونه‌ی [mysql] دیگر توسعه داده نمی‌شود و پایان عمر آن در نسخه PHP 5.5.0 به طور رسمی اعلام شده است، بدین معنی که در نسخه‌های بعدی حذف خواهد شد. اگر در برنامه‌ی خود از تابع‌هایی که با `*_mysql` شروع می‌شوند استفاده می‌کنید، مانند `()mysql_connect` و `()mysql_query`، این‌ها در نسخه‌های بعدی PHP قابل استفاده نخواهند بود. این بدان معنی است که باید آن‌ها را با گزینه‌های مناسب‌تری مانند [mysqli] یا [PDO] جایگزین کنید و بهتر است که این کار را اکنون انجام دهید تا بعدها مجبور نباشید این تغییرات را با عجله انجام دهید.
 
-**If you are starting from scratch then absolutely do not use the [mysql] extension: use the [MySQLi extension][mysqli], or use PDO.**
+**اگر از ابتدا نرم‌افزاری را شروع کرده‌اید به طور حتم نباید از افزونه‌ی [mysql] استفاده کنید: در عوض از [افزونه‌ی MySQLi][mysqli] یا PDO استفاده کنید.**
 
-* [PHP: Choosing an API for MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
-* [PDO Tutorial for MySQL Developers](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
+* [PHP: انتخاب API مناسب برای MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
+* [آموزش PDO برای توسعه‌دهندگان MySQL](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 
-## PDO Extension
 
-PDO is a database connection abstraction library &mdash; built into PHP since 5.1.0 &mdash; that provides a common interface to talk with
-many different databases. For example, you can use basically identical code to interface with MySQL or SQLite:
+## افزونه‌ی PDO
+
+PDO یک کتابخانه‌ی انتزاعی جهت برقراری ارتباط با پایگاه‌داده‌های مختلف است &mdash; که از نسخه‌ی PHP 5.1.0 قابل دسترس است. برای نمونه، شما می‌توانید از کد یکسانی جهت برقراری ارتباط با MySQL یا SQLite استفاده کنید:
 
 {% highlight php %}
 // PDO + MySQL
@@ -45,14 +37,11 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
 echo htmlentities($row['some_field']);
 {% endhighlight %}
 
-PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types
-of database with the same API.
+PDO پرس‌وجوهای SQL را ترجمه نمی‌کند یا ویژگی‌های خاص هر پایگاه‌داده را شبیه‌سازی نمی‌کند; تنها برای اتصال به چند پایگاه‌داده از طریق یک API طراحی شده است.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+از همه مهم‌تر، `PDO` این امکان را می‌دهد تا داده‌های ورودی به نرم‌افزار را با روش‌های امن وارد پایگاه‌داده کنید که اینکار منجر به جلوگیری از حملات SQL Injection می‌گردد.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record from a database. This is the `wrong`
-way to do this:
+فرض کنید اسکریپت PHP یک ID از نوع عددی را به عنوان پارامتر می‌پذیرد. از این ID جهت فراخوانی کاربر از پایگاه‌داده استفاده می‌شود. قطعه کد پایین روش `اشتباه` پیاده‌سازی اینکار است:
 
 {% highlight php %}
 <?php
@@ -60,10 +49,7 @@ $pdo = new PDO('sqlite:/path/db/users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a
-heartbeat, using a practice called [SQL Injection](http://wiki.hashphp.org/Validation). Just imagine if a hacker passes in an inventive `id` parameter by calling a URL like
-`http://domain.com/?id=1%3BDELETE+FROM+users`.  This will set the `$_GET['id']` variable to `1;DELETE FROM users`
-which will delete all of your users! Instead, you should sanitize the ID input using PDO bound parameters.
+اینطور کدنویسی وحشتناک است. شما پارامتری را به طور مستقیم وارد پایگاه‌داده می‌کنید بدون آنکه آن را بررسی کنید. اینکار باعث می‌شود در کسری از ثانیه، مورد حمله قرار بگیرید با استفاده از روشی به نام [SQL Injection](http://wiki.hashphp.org/Validation). فقط تصور کنید فرد مهاجم عبارتی مانند `http://domain.com/?id=1%3BDELETE+FROM+users` را فراخوانی کند. اینکار متغیر ‍‍`['id']GET_$` را با مقدار `1;DELETE FROM users` تنظیم می‌کند که باعث می‌شود اطلاعات تمام کاربران شما از بین برود! شما باید با استفاده از انقیاد پارامتر در PDO داده‌ی ورودی را بررسی کنید.
 
 {% highlight php %}
 <?php
@@ -73,18 +59,13 @@ $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // <-- Automatically sanit
 $stmt->execute();
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is introduced to the
-database preventing potential SQL injection attacks.
+این کد صحیح است، چرا که با استفاده از انقیاد پارامتر روی عبارت PDO کار می‌کند. اینکار باعث می‌شود داده‌ی ورودی قبل از اینکه وارد پایگاه‌داده شود بررسی شده و احتمال خطر SQL Injection را از بین می‌برد.
 
-* [Learn about PDO]
+* [درباره‌ی PDO بیشتر بدانید]
 
-You should also be aware that database connections use up resources and it was not unheard-of to have resources
-exhausted if connections were not implicitly closed, however this was more common in other languages. Using PDO you
-can implicitly close the connection by destroying the object by ensuring all remaining references to it are deleted,
-i.e. set to NULL.  If you don't do this explicitly, PHP will automatically close the connection when your script ends -
-unless of course you are using persistent connections.
+باید آگاه باشید که برقراری ارتباط با پایگاه‌داده از منابع سیستم استفاده می‌کند و اگر این ارتباط پایان نیابد، این منابع به صورت خودکار آزاد نمی‌شوند. با استفاده از PDO این اطمینان را دارید که زمان خاتمه‌ی ارتباط، شی مربوط به پایگاه‌داده از بین می‌رود و تمام منابع آن باز می‌گردد. اگر اینکار را به صورت واضح انجام ندهید، PHP به صورت خودکار هنگام خاتمه‌ی اسکریپت ارتباط پایگاه‌داده را قطع می‌کند مگر اینکه ار یک ارتباط پایدار استفاه کرده باشید.
 
-* [Learn about PDO connections]
+* [درباره‌ی برقراری ارتباط با استفاده از PDO بیشتر بدانید]
 
 [Learn about PDO]: http://www.php.net/manual/en/book.pdo.php
 [Learn about PDO connections]: http://php.net/manual/en/pdo.connections.php

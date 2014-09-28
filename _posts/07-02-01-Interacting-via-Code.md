@@ -1,13 +1,12 @@
 ---
 isChild: true
-title: Interacting with Databases
+title: ارتباط با پایگاه‌داده
 anchor: databases_interacting
 ---
 
-## Interacting with Databases {#databases_interacting_title}
+## ارتباط با پایگاه‌داده {#databases_interacting_title}
 
-When developers first start to learn PHP, they often end up mixing their database interaction up with their 
-presentation logic, using code that might look like this:
+زمانی که توسعه‌دهندگان شروع به یادگیری PHP می‌کنند، اغلب کد مربوط به بخش پایگاه‌داده را با کد مربوط به بخش نرم‌افزار خود مخلوط می‌کنند، مانند:
 
 {% highlight php %}
 <ul>
@@ -18,11 +17,11 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 {% endhighlight %}
 
-This is bad practice for all sorts of reasons, mainly that its hard to debug, hard to test, hard to read and it is going to output a lot of fields if you don't put a limit on there.
+این روش اشتباهی است بنا به دلایل مختلف، بیشتر به خاطر دشوار بودن عیب‌یابی، آزمایش و خواندن آن، که باعث می‌شود داده‌ی بسیاری به خروجی برود اگر برای آن حد خاصی مشخص نشده باشد.
 
-While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or [functional programming](/#functional-programming) - there must be some element of separation. 
+با توجه به روش‌های دیگری که برای این مساله وجود دارد - مانند [برنامه‌نویسی شی‌گرا](/#object-oriented-programming) یا [برنامه‌نویسی تابعی](/#functional-programming) - بایستی این فرآیند به صورت جداگانه انجام شود.
 
-Consider the most basic step:
+ساده‌ترین روش را در نظر بگیرید:
 
 {% highlight php %}
 <?php
@@ -35,9 +34,9 @@ foreach (getAllFoos() as $row) {
 }
 {% endhighlight %}
 
-That is a good start. Put those two items in two different files and you've got some clean separation.
+این شروع خوبی است. آن دو مورد را داخل فایل‌های جداگانه قرار دهید تا جدایی بخش‌ها ملموس شود.
 
-Create a class to place that method in and you have a "Model". Create a simple `.php` file to put the presentation logic in and you have a "View", which is very nearly [MVC] - a common OOP architecture for most [frameworks](/#frameworks_title).
+با ایجاد یک کلاس که متد شما را در بر می‌گیرد می‌توانید یک "Model" به وجود آورید. یک فایل ساده با پسوند `php.` جهت قراردادن خروجی خود به وجود آورید تا در اینجا به یک "View" برسید، که تقریبا نزدیک به [MVC] - یک معماری شی‌گرا برای اکثر [فریم‌ورک‌ها](/#frameworks_title) است.
 
 **foo.php**
 
@@ -84,11 +83,9 @@ class Foo()
 <? endforeach ?>
 {% endhighlight %}
 
-This is essentially the same as what most modern frameworks are doing, all be it a little more manual. You might 
-not need to do all of that every time, but mixing together too much presentation logic and database interaction can be a real problem if you ever want to [unit-test](/#unit-testing) your application.
+این تقریبا مشابه کاری است که تمام فریم‌ورک‌ها انجام می‌دهند البته با کمی تفاوت. شما نیاز ندارید که این گام‌ها را مجدد تکرار کنید، اما زمانی که قصد [آزمایش کردن واحدی](/#unit-testing) از نرم‌افزار خود را دارید، قاطی کردن کدهای مختلف با یکدیگر برای شما مشکل‌ساز خواهد شد.
 
-[PHPBridge] have a great resource called [Creating a Data Class] which covers a very similar topic, and is great 
-for developers just getting used to the concept of interacting with databases.
+[PHPBridge] مقاله‌ی فوق‌العاده‌ای دارد با مضمون [ایجاد یک کلاس داده‌ای] که موضوعی بسیار مشابه به این را پوشش می‌دهد و برای توسعه‌دهندگانی که به تازگی می‌خواهند با پایگاه‌داده کار کنند، بسیار مناسب است.
 
 [MVC]: http://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
 [PHPBridge]: http://phpbridge.org/
