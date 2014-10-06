@@ -1,12 +1,8 @@
 ---
-title: Templating
+title: قالب
 anchor: templating
 ---
 
-# Templating {#templating_title}
+# قالب‌ها {#templating_title}
 
-Templates provide a convenient way of separating your controller and domain logic from your presentation logic.
-Templates typically contain the HTML of your application, but may also be used for other formats, such as XML.
-Templates are often referred to as "views", the second component of the
-[model–view–controller](http://www.phptherightway.com/pages/Design-Patterns.html#model-view-controller) (MVC)
-software architecture pattern.
+قالب‌ها باعث می‌شوند منطق کد شما از قسمت نمایش‌دهنده یا خروجی آن جدا گردد. قالب‌ها بیشتر دربردارنده‌ی HTML نرم‌افزار شما هستند اما می‌توانند ساختارهای دیگری را نیز شامل شوند، مانند XML. قالب‌ها با نام "Views" نیز یاد می‌شوند، دومین بخش الگوی معماری نرم‌افزار [MVC](http://www.phptherightway.com/pages/Design-Patterns.html#model-view-controller).

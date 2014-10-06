@@ -1,21 +1,13 @@
 ---
+title: مزیت‌ها
 isChild: true
 anchor: templating_benefits
 ---
 
-## Benefits {#templating_benefits_title}
+## مزیت‌ها {#templating_benefits_title}
 
-The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
-your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
-data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
-helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
-the client-side code (markup).
+مزیت اصلی در استفاده از قالب‌ها این است که منطق نرم‌افزار شما از قسمت ظاهری  و نمایشی آن جدا می‌شود. قالب‌ها وظیفه‌ی اصلی در نمایش دادن محتوا را دارند. آن‌ها وظیفه‌ی ذخیره‌سازی یا عملیات پیچیده‌ی دیگر روی داده‌ها را ندارند. این موضوع بیشتر در تیم‌های نرم‌افزاری که افراد گوناگون روی قسمت‌های مختلف پروژه کار می‌کنند، تاثیرگذار است، برای نمونه کد سمت سرور (کنترل‌کننده‌ها، مدل‌ها) که توسط توسعه‌دهندگان و کد سمت مرورگر که توسط طراحان نوشته می‌شود.
 
-Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
-defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
-reusable pieces. For example, your site header and footer can each be defined as templates, which are then included
-before and after each page template.
+استفاده از قالب‌ها منجر به بهینه‌شدن کد قسمت ظاهری نرم‌افزار خواهد شد. قالب‌ها معمولا در پوشه‌ی "views" قرار داده می‌شوند، که هر کدام در یک فایل جداگانه قرار دارند. این رویکرد استفاده مجدد از کد را بهینه می‌کند چرا که قسمت‌های بزرگ کد را به بخش‌های کوچک‌تر تبدیل می‌کند. برای نمونه، قسمت header و footer سایت شما می‌تواند توسط قالب تعریف شود، که این قالب‌ها قبل و بعد از قالب اصلی نرم‌افزار قرار می‌گیرند.
 
-Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
-content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
-variables and functions.
+در نهایت، بر اساس کتابخانه‌ای که از آن استفاده می‌کنید، قالب‌ها می‌توانند امنیت بیشتری ایجاد کنند چرا که محتوای تولید شده توسط کاربر را به صورت خودکار امن می‌سازند (به عبارت دیگر escape می‌کنند). برخی کتابخانه‌ها محیط‌های امنی را در اختیار طراحان قالب قرار می‌دهند که تنها به بخشی از متغیرها و توابع دسترسی دارند.

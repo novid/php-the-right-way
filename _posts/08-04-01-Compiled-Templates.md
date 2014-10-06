@@ -1,20 +1,14 @@
 ---
+title: قالب‌های کامپایل شدنی
 isChild: true
 anchor: compiled_templates
 ---
 
-## Compiled Templates {#compiled_templates}
+## قالب‌های کامپایل شدنی {#compiled_templates}
 
-While PHP has evolved into a mature, object oriented language, it
-[hasn't improved much](http://fabien.potencier.org/article/34/templating-engines-in-php) as a templating language.
-Compiled templates, like [Twig](http://twig.sensiolabs.org/) or [Smarty](http://www.smarty.net/), fill this void by
-offering a new syntax that has been geared specifically to templating. From automatic escaping, to inheritance and
-simplified control structures, compiled templates are designed to be easier to write, cleaner to read and safer to use.
-Compiled templates can even be shared across different languages, [Mustache](http://mustache.github.io/) being a good
-example of this. Since these templates must be compiled there is a slight performance hit, however this is very minimal
-when proper caching is used.
+درست است که PHP به عنوان یک زبان برنامه‌نویسی شی‌گرا پیشرفت زیادی داشته است اما به عنوان یک زبان که از ساختار templating پشتیبانی می‌کند [پیشرفت چندانی نداشته](http://fabien.potencier.org/article/34/templating-engines-in-php) است. قالب‌های کامپایل شدنی مانند [Twig](http://twig.sensiolabs.org/) یا [Smarty](http://www.smarty.net/) این فضای خالی را با ارایه‌ی ساختاری جدید پر می‌کنند، که به طور خاص به این منظور طراحی شده است. قالب‌های کامپایل شدنی آسان‌تر نوشته، تمیزتر خوانده و امن‌تر استفاده می‌شوند چرا که از قابلیت‌هایی مانند بررسی خودکار محتوای کاربر، پشتیبانی از وراثت و ساختار داده‌های مناسب استفاده می‌کنند. این قالب‌ها حتی می‌توانند بین چند زبان برنامه‌نویسی به اشتراک گذاشته شوند که [Mustache](http://mustache.github.io/) نمونه‌ای از آن‌ها است. از آن‌جایی که این قالب‌ها کامپایل می‌شوند درصدی مشکل در سرعت به وجود می‌آورند که اگر از ساختار Caching مناسب استفاده شود این مشکل رفع می‌گردد.
 
-Example of a compiled template (using the [Twig](http://twig.sensiolabs.org/) library):
+نمونه‌ای از یک قالب کامپایل شدنی (که از کتابخانه‌ی [Twig](http://twig.sensiolabs.org/) استفاده می‌کند):
 
 {% highlight text %}
 {% raw %}
