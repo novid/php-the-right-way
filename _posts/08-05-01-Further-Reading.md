@@ -17,13 +17,13 @@ anchor: templating_further_reading
 
 ### کتابخانه‌ها
 
-- [Aura.View](https://github.com/auraphp/Aura.View) *(native)*
-- [Blade](http://laravel.com/docs/templates) *(compiled, framework specific)*
-- [Dwoo](http://dwoo.org/) *(compiled)*
-- [Latte](https://github.com/nette/latte) *(compiled)*
-- [Mustache](https://github.com/bobthecow/mustache.php) *(compiled)*
-- [PHPTAL](http://phptal.org/) *(compiled)*
-- [Plates](http://platesphp.com/) *(native)*
-- [Smarty](http://www.smarty.net/) *(compiled)*
-- [Twig](http://twig.sensiolabs.org/) *(compiled)*
-- [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html) *(native, framework specific)*
+- [Aura.View](https://github.com/auraphp/Aura.View) *(بومی)*
+- [Blade](http://laravel.com/docs/templates) *(کامپایل شدنی، وابسته به فریم‌ورک)*
+- [Dwoo](http://dwoo.org/) *(کامپایل شدنی)*
+- [Latte](https://github.com/nette/latte) *(کامپایل شدنی)*
+- [Mustache](https://github.com/bobthecow/mustache.php) *(کامپایل شدنی)*
+- [PHPTAL](http://phptal.org/) *(کامپایل شدنی)*
+- [Plates](http://platesphp.com/) *(بومی)*
+- [Smarty](http://www.smarty.net/) *(کامپایل شدنی)*
+- [Twig](http://twig.sensiolabs.org/) *(کامپایل شدنی)*
+- [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html) *(بومی، وابسته به فریم‌ورک)*
