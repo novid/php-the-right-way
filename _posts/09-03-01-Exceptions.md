@@ -1,24 +1,16 @@
 ---
+title: استثنا
 isChild: true
 anchor: exceptions
 ---
 
-## Exceptions {#exceptions_title}
+## استثنا {#exceptions_title}
 
-Exceptions are a standard part of most popular programming languages, but they are often overlooked by PHP programmers. 
-Languages like Ruby are extremely Exception heavy, so whenever something goes wrong such as a HTTP request failing, or 
-a DB query goes wrong, or even if an image asset could not be found, Ruby (or the gems being used) will throw an 
-exception to the screen meaning you instantly know there is a mistake. 
+استثناها بخشی استاندارد در اکثر زبان‌های برنامه‌نویسی هستند، اما اغلب در PHP نادیده گرفته می‌شوند. زبان‌هایی مانند روبی که دارای خطایابی سنگین هستند، هر زمان اتفاقی در آن‌ها بیفتد (یک درخواست HTTP ناقص به پایان برسد، پرس و جو از پایگاه داده اشتباه باشد یا حتی یک فایل تصویری پیدا نشود) بلافاصله با ایجاد و نمایش آن خطا شما را مطلع می‌سازند.
 
-PHP itself is fairly lax with this, and a call to `file_get_contents()` will usually just get you a `FALSE` and a warning.
-Many older PHP frameworks like CodeIgniter will just return a false, log a message to their proprietary logs and maybe 
-let you use a method like `$this->upload->get_error()` to see what went wrong. The problem here is that you have to go 
-looking for a mistake and check the docs to see what the error method is for this class, instead of having it made extremely 
-obvious.
+اما PHP با اینطور مسائل به روشی سهل‌انگارانه برخورد می‌کند، مانند فراخوانی تابع `()file_get_contents` که در صورت پیدا نکردن فایل یک عبارت `FALSE` و یک هشدار باز می‌گرداند. بسیاری از چارچوب‌های نرم‌افزاری قدیمی‌ PHP مانند CodeIgniter تنها یک مقدار false باز می‌گردانند یا آن را در سیستم داخلی خود ذخیره کرده و در نهایت با استفاده از متدی مانند `()this->upload->get_error$` کاربر را در جریان خطا قرار می‌دهند. مشکل اینجاست برای اینکه درک کنید این متد چه نوع خطایی را گزارش می‌دهد باید در مستندات دنبال آن بگردید به جای اینکه از اسم و روش نامگذاری آن متوجه نوع خطا شوید.
 
-Another problem is when classes automatically throw an error to the screen and exit the process. When you do this you 
-stop another developer from being able to dynamically handle that error. Exceptions should be thrown to make a developer
-aware of an error; they then can choose how to handle this. E.g.:
+مشکل دیگر با کلاس‌هایی است که به صورت خودکار خطا را در نمایشگر نشان می‌دهند و بلافاصله فرآیند اجرا خاتمه می‌یابد. با اینکار شما توانایی مدیریت خطا توسط سایر توسعه‌دهندگان را نادیده می‌گیرید. استثناها باید ایجاد شوند تا یک توسعه‌دهنده از بروز خطا آگاهی یابد، سپس آن‌ها هستند که تصمیم می‌گیرند چگونه خطا را مدیریت کنند. برای نمونه:
 
 {% highlight php %}
 <?php
@@ -45,27 +37,23 @@ finally
 }
 {% endhighlight %}
 
-### SPL Exceptions
+### استثناها در کتابخانه‌ی استاندارد PHP
 
-The generic `Exception` class provides very little debugging context for the developer; however, to remedy this,
-it is possible to create a specialized `Exception` type by sub-classing the generic `Exception` class:
+کلاس عمومی `Exception` زمینه‌ی خطایابی محدودی برای توسعه‌دهنده ایجاد می‌کند. اگرچه، برای غلبه بر این محدودیت، این امکان وجود دارد از کلاس اصلی `Execption` ارث‌بری کنیم:
 
 {% highlight php %}
 <?php
 class ValidationException extends Exception {}
 {% endhighlight %}
 
-This means you can add multiple catch blocks and handle different Exceptions differently. This can lead to 
-the creation of a <em>lot</em> of custom Exceptions, some of which could have been avoided using the SPL Exceptions 
-provided in the [SPL extension][splext]. 
+این بدان معنی است که می‌توانید حالت‌های مختلفی جهت بررسی خطا در این کلاس تعریف کنید. این کار منجر به تولید **بسیاری** موارد استثنا خواهد شد، که برخی از آن‌ها به صورت کلی توسط [افزونه SPL][splext] نادیده گرفته می‌شوند.
 
-If for example you use the `__call()` Magic Method and an invalid method is requested then instead of throwing a standard 
-Exception which is vague, or creating a custom Exception just for that, you could just `throw new BadMethodCallException;`.
+برای نمونه اگر از تابع `()call__` استفاده کنید و طی آن یک متد نامعتبر فراخوانی شود به جای اینکه یک استثنا از نوع استاندارد ایجاد شود، می‌توانید به راحتی از استثنایی مانند `throw new BadMethodCallException` استفاده کنید.
 
-* [Read about Exceptions][exceptions]
-* [Read about SPL Exceptions][splexe]
-* [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-* [Exception Best Practices in PHP 5.3][exception-best-practices53]
+* [درباره‌ی استثناها بیشتر بخوانید][exceptions]
+* [درباره‌ی افزونه‌ی SPL بیشتر بخوانید][splexe]
+* [استفاده‌ی تودرتو از استثناها در PHP][nesting-exceptions-in-php]
+* [بهترین روش‌های استفاده از استثنا در PHP5.3][exception-best-practices53]
 
 [exceptions]: http://php.net/manual/en/language.exceptions.php
 [splexe]: http://php.net/manual/en/spl.exceptions.php

@@ -1,7 +1,6 @@
 ---
-title: Errors and Exceptions
+title: خطا و استثنا
 anchor: errors_and_exceptions
 ---
 
-# Errors and Exceptions {#errors_and_exceptions_title}
-
+# خطا و استثنا {#errors_and_exceptions_title}
