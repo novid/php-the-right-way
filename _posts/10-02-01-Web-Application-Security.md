@@ -1,14 +1,14 @@
 ---
+title: امنیت در نرم‌افزار وب
 isChild: true
 anchor: web_application_security
 ---
 
-## Web Application Security {#web_application_security_title}
+## امنیت در نرم‌افزار وب {#web_application_security_title}
 
-There are bad people ready and willing to exploit your web application. It is important that you
- take necessary precautions to harden your web application's security. Luckily, the fine folks at [The Open Web Application Security Project][1] (OWASP) have compiled a comprehensive list of known security issues and methods to protect yourself against them. This is a must read for the security-conscious developer.
+افراد مختلفی وجود دارند که می‌توانند از نرم‌افزار وب شما سواستفاده کنند و این وظیفه‌ی شماست که اقدامات لازم جهت هرچه امن‌تر شدن نرم‌افزار را انجام دهید. خوشبختانه، افراد حاضر در [پروژه‌ی امنیت نرم‌افزارهای تحت وب][1]، چارچوبی را به عنوان سند برای پیاده‌سازی روش‌های امنیت اطلاعات در نرم‌افزارهای تحت وب فراهم ساخته‌اند. این سند، برای توسعه‌دهندگانی که به امنیت نرم‌افزار خود اهمیت می‌دهند بسیار مفید است.
 
-* [Read the OWASP Security Guide][2]
+* [مطالعه‌ی راهنمای امنیت OWASP][2]
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents

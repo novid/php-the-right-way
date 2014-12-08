@@ -1,16 +1,13 @@
 ---
+title: فایل‌های پیکربندی
 isChild: true
 anchor: configuration_files
 ---
 
-## Configuration Files {#configuration_files_title}
+## فایل‌های پیکربندی {#configuration_files_title}
 
-When creating configuration files for your applications, best practices recommend that one of the following methods 
-be followed:
+هنگام به وجود آوردن فایل‌های پیکربندی برای نرم‌افزار خود بهتر است به برخی اصول بنیادی پایبند باشید:
 
-- It is recommended that you store your configuration information where it cannot be accessed directly and pulled in 
-via the file system.
-- If you must store your configuration files in the document root, name the files with a `.php` extension. This 
-ensures that, even if the script is accessed directly, it will not be output as plain text.
-- Information in configuration files should be protected accordingly, either through encryption or group/user file 
-system permissions
+- توصیه می‌شود این فایل‌ها را در جایی که قابلیت دسترسی عمومی به آن وجود ندارد نگاه دارید.
+- اگر مجبور به ذخیره‌سازی این فایل‌ها در قسمت عمومی وب‌سرور هستید، آن‌ها را با پسوند `php.` ذخیره سازید. حتی اگر اسکریپت به صورت مستقیم فراخوانی شود، خروجی آن به صورت متن نمایش داده نمی‌شود.
+- اطلاعات موجود در این فایل‌ها باید مورد حفاظت قرار گیرند، خواه با استفاده از رمزنگاری یا مجوزهای مربوط به کاربر/گروه در سیستم‌عامل سرور

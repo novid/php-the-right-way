@@ -1,46 +1,42 @@
 ---
+title: گزارش خطا
 isChild: true
 anchor: error_reporting
 ---
 
-## Error Reporting {#error_reporting_title}
+## گزارش خطا {#error_reporting_title}
 
-Error logging can be useful in finding the problem spots in your application, but it can also expose information about 
-the structure of your application to the outside world. To effectively protect your application from issues that could 
-be caused by the output of these messages, you need to configure your server differently in development versus 
-production (live).
+ثبت و گزارش خطا روشی مناسب جهت عیب‌یابی نرم‌افزار است اما در صورتی که اقدامات لازم جهت محرمانه بودن این خطاها صورت نگیرد می‌تواند منجر به فاش شدن ساختار نرم‌افزار شما گردد. برای اینکه این مشکل به وجود نیاید باید تنظیمات متفاوتی در محیط توسعه در مقایسه با محیط نهایی نرم‌افزار داشته باشید.
 
-### Development
+### محیط توسعه
 
-To show every possible error during <strong>development</strong>, configure the following settings in your `php.ini`:
+جهت نمایش تمام خطاهای موجود در محیط *توسعه*، تنظیمات زیر را در فایل `php.ini` انجام دهید:
 
     display_errors = On
     display_startup_errors = On
     error_reporting = -1
     log_errors = On
 
-> Passing in the value `-1` will show every possible error, even when new levels and constants are added in future PHP versions. The `E_ALL` constant also behaves this way as of PHP 5.4. - [php.net](http://php.net/manual/function.error-reporting.php)
+> استفاده از `1-` تمام خطاهای موجود را نمایش می‌دهد، حتی آن‌هایی که در نسخه‌های بعدی PHP به وجود بیایند. ثابت `E_ALL` رفتاری مشابه به این عملکرد را در نسخه‌ی PHP 5.4 دارد. - [php.net](http://php.net/manual/function.error-reporting.php)
 
-The `E_STRICT` error level constant was introduced in 5.3.0 and is not 
-part of `E_ALL`, however it became part of `E_ALL` in 5.4.0. What does this mean? 
-In terms of reporting every possible error in version 5.3 it means you must 
-use either `-1` or `E_ALL | E_STRICT`. 
+سطح خطا `E_STRICT` در نسخه‌ی PHP 5.3.0 معرفی شد و قسمتی از `E_ALL` نیست، اگرچه در نسخه‌ی PHP 5.4.0 به قسمتی از `E_ALL` تبدیل شد. این به چه معناست؟ در نسخه‌ی PHP 5.3 اگر بخواهید تمام خطاهای موجود را ببینید باید از `1-` یا `E_ALL | E_STRICT` استفاه کنید.
 
-**Reporting every possible error by PHP version**
+**گزارش خطا با توجه به نسخه‌های مختلف PHP**
 
-* &lt; 5.3 `-1` or `E_ALL`
-* &nbsp; 5.3 `-1` or `E_ALL | E_STRICT`
-* &gt; 5.3 `-1` or `E_ALL`
+* &lt; 5.3 `-1` یا `E_ALL`
+* &nbsp; 5.3 `-1` یا `E_ALL | E_STRICT`
+* &gt; 5.3 `-1` یا `E_ALL`
 
-### Production
+### محیط نهایی
 
-To hide errors on your <strong>production</strong> environment, configure your `php.ini` as:
+جهت پنهان‌سازی تمام خطاهای موجود در محیط *نهایی*، تنظیمات زیر را در فایل `php.ini` انجام دهید:
 
     display_errors = Off
     display_startup_errors = Off
     error_reporting = E_ALL
     log_errors = On
 
+با استفاده از این تنظیمات، خطاها کماکان در سرور ثبت می‌شوند اما به کاربر نمایش داده نمی‌شوند. برای اطلاعات بیشتر درباره‌ی این تنظیمات، راهنمای رسمی PHP را مشاهده کنید:
 With these settings in production, errors will still be logged to the error logs for the web server, but will not be 
 shown to the user. For more information on these settings, see the PHP manual:
 

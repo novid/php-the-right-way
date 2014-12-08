@@ -1,19 +1,21 @@
 ---
+title: ایمن‌سازی گذرواژه
 isChild: true
 anchor: password_hashing
 ---
 
-## Password Hashing {#password_hashing_title}
+## ایمن‌سازی گذرواژه {#password_hashing_title}
 
-Eventually everyone builds a PHP application that relies on user login. Usernames and passwords are stored in a database and later used to authenticate users upon login.
+به طور طبیعی، یکی از فرآیندهای موجود نرم‌افزارهای وب مبتنی بر PHP استفاده از نام کاربری و گذرواژه جهت ایجاد حساب کاربری است که این اطلاعات در پایگاه‌داده ذخیره می‌شوند تا برای احراز هویت کاربران مورد استفاده قرار گیرند.
 
-It is important that you properly [_hash_][3] passwords before storing them. Password hashing is an irreversible, one way function performed against the user's password. This produces a fixed-length string that cannot be feasibly reversed. This means you can compare a hash against another to determine if they both came from the same source string, but you cannot determine the original string. If passwords are not hashed and your database is accessed by an unauthorized third-party, all user accounts are now compromised. Some users may (unfortunately) use the same password for other services. Therefore, it is important to take security seriously.
+بسیار مهم است که گذرواژه‌ها را قبل از ذخیره‌سازی، [hash][3] کنید. این یک عمل بازگشت‌ناپذیر است که گذرواژه‌ی کاربر را به رشته‌ای با طول ثابت تبدیل می‌کند که این رشته قابل بازگشت به گذرواژه‌ی اولیه نباشد. این بدان معناست که می‌توانید دو مقدار را با یکدیگر بررسی کنید تا مشخص شود آیا از یک گذرواژه‌ی یکسان تولید شده‌اند یا خیر در حالی که نمی‌توانید رشته‌ی اولیه (گذرواژه‌) را تشخیص دهید. اگر این اقدام مهم را انجام ندهید و پایگاه‌داده‌ی شما در اختیار شخص دیگری قرار گیرد آنگاه اطلاعات ورود کاربران شما فاش خواهد شد. در نظر داشته باشید برخی کاربران از یک گذرواژه‌ (متاسفانه) برای سرویس‌های دیگر نیز استفاده می‌کنند. به همین خاطر، مهم است که این مسایل را جدی بگیرید.
 
-**Hashing passwords with `password_hash`**
 
-In PHP 5.5 `password_hash` was introduced. At this time it is using BCrypt, the strongest algorithm currently supported by PHP. It will be updated in the future to support more algorithms as needed though. The `password_compat` library was created to provide forward compatibility for PHP >= 5.3.7.
+**کاربرد تابع `password_hash`**
 
-Below we hash a string, and then check the hash against a new string. Because our two source strings are different ('secret-password' vs. 'bad-password') this login will fail.
+این تابع در 5.5 PHP معرفی شد و در حال حاضر از الگوریتم BCrypt، که قوی‌ترین الگوریتم موجود در PHP است، استفاده می‌کند. در صورت نیاز به الگوریتم‌های قوی‌تر، در آینده بروزرسانی خواهد شد. همچنین کتابخانه‌ی `password_compat` برای نسخه‌های قدیمی‌تر مانند 5.3.7 به بالا، به وجود آمده است.
+
+در ادامه، با استفاده از این تابع یک رشته را hash کرده و با یک رشته‌ی دیگر مقایسه می‌کنیم. از آنجایی که دو رشته‌ی ورودی متفاوت هستند، عملیات ورود ناموفق خواهد بود.
 
 {% highlight php %}
 <?php
@@ -31,10 +33,10 @@ if (password_verify('bad-password', $passwordHash)) {
 
 
 
-* [Learn about `password_hash`] [1]
-* [`password_compat` for PHP  >= 5.3.7 && < 5.5] [2]
-* [Learn about hashing in regards to cryptography] [3]
-* [PHP `password_hash` RFC] [4]
+* [درباره‌ی `password_hash` بیشتر بدانید] [1]
+* [تابع `password_compat` برای نسخه‌های 5.3.7 تا 5.5] [2]
+* [درباره‌ی هشینگ و رمزنگاری بیشتر بدانید] [3]
+* [چگونگی به وجود آمدن تابع `password_hash` و اسناد فنی مربوطه] [4]
 
 [1]: http://us2.php.net/manual/en/function.password-hash.php
 [2]: https://github.com/ircmaxell/password_compat

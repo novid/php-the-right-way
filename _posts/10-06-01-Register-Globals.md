@@ -1,18 +1,15 @@
 ---
+title: استفاده از متغیرهای سراسری
 isChild: true
 anchor: register_globals
 ---
 
-## Register Globals {#register_globals_title}
+## استفاده از متغیرهای سراسری {#register_globals_title}
 
-**NOTE:** As of PHP 5.4.0 the `register_globals` setting has been removed and can no 
-longer be used. This is only included as a warning for anyone in the process of upgrading a legacy application.
+**تذکر:** از نسخه‌ی PHP 5.4.0 به بالا پیکربندی `register_globals` حذف و غیرقابل استفاده است و در فرآیند برورزسانی یک نرم‌افزار قدیمی به صورت یک اخطار نمایش داده می‌شود.
 
-When enabled, the `register_globals` configuration setting that makes several types of variables (including ones from 
-`$_POST`, `$_GET` and `$_REQUEST`) available in the global scope of your application. This can easily lead to 
-security issues as your application cannot effectively tell where the data is coming from.
+زمانی که این پیکربندی فعال باشد، منجر به در دسترس بودن تمام متغیرهای سراسری (مانند `GET_$`، `POST_$`، و `REQUEST_$`) در تمام حوزه‌های نرم‌افزار شما خواهد بود که این امر به مشکلات امنیتی بسیار دامن می‌زند و هیچ روشی وجود ندارد که بتوان تعیین کرد داده‌ی ورودی از کدام قسمت وارد نرم‌افزار شده است.
 
-For example: `$_GET['foo']` would be available via `$foo`, which can override variables that have not been declared. 
-If you are using PHP < 5.4.0 __make sure__ that `register_globals` is __off__.
+برای نمونه: متغیر `['foo']GET_$` با استفاده از `foo$` نیز قابل دسترسی است، که ممکن است منجر به تعریف متغیرهای نامشخص گردد. اگر از PHP 5.4.0 به پایین استفاده می‌کنید __اطمینان حاصل کنید__ که `register_globals` __غیرفعال باشد__.
 
-* [Register_globals in the PHP manual](http://www.php.net/manual/en/security.globals.php)
+* [درباره‌ی register_globals بیشتر بدانید](http://www.php.net/manual/en/security.globals.php)

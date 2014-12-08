@@ -1,64 +1,43 @@
 ---
+title: بررسی داده‌ی ورودی
 isChild: true
 anchor: data_filtering
 ---
 
-## Data Filtering {#data_filtering_title}
+## بررسی داده‌ی ورودی {#data_filtering_title}
 
-Never ever (ever) trust foreign input introduced to your PHP code. Always sanitize and validate
-foreign input before using it in code. The `filter_var` and `filter_input` functions can sanitize text and validate text formats (e.g.
-email addresses).
+هیچگاه و به هیچ عنوان به داده‌ی ورودی از طرف کاربر اطمینان نکنید. قبل از اینکه داده را در کد مورد استفاده قرار دهید، همیشه آن را بررسی و کنترل کنید. با استفاده از توابع `filter_var` و `filter_input` می‌توانید از صحت داده‌ی ورودی اطمینان حاصل کنید (مانند ایمیل و ...).
 
-Foreign input can be anything: `$_GET` and `$_POST` form input data, some values in the `$_SERVER`
-superglobal, and the HTTP request body via `fopen('php://input', 'r')`. Remember, foreign input is not
-limited to form data submitted by the user. Uploaded and downloaded files, session values, cookie data,
-and data from third-party web services are foreign input, too.
+داده‌ی ورودی شامل طیف گسترده‌ای است: متغیرهای `GET_$` و `POST_$` از طریق فرم، برخی مقادیر درون متغیر `SERVER_$` و حتی درخواست HTTP با استفاده از `('php://input')fopen`. به یاد داشته باشید که داده‌ی ورودی تنها از طریق فرم‌هایی که کاربران پر می‌کنند به دست نمی‌آید و مواردی مانند دانلود و آپلود فایل، مقدارهای موجود در session، داده cookie و داده‌ی مربوط به سرویس‌های دیگر، همگی از این طیف گسترده هستند.
 
-While foreign data can be stored, combined, and accessed later, it is still foreign input. Every
-time you process, output, concatenate, or include data in your code, ask yourself if
-the data is filtered properly and can it be trusted.
+هرچند داده‌ی ورودی قابل ذخیره‌سازی، ترکیب و دسترسی در زمان دیگر است، کماکان داده‌ی ناامن به حساب می‌آید. هر زمان که قصد پردازش، خروجی‌گرفتن، الحاق کردن یا استفاده از آن را در کد داشتید از خود بپرسید آیا می‌توان به این داده اطمینان کرد یا خیر.
 
-Data may be _filtered_ differently based on its purpose. For example, when unfiltered foreign input is passed
-into HTML page output, it can execute HTML and JavaScript on your site! This is known as Cross-Site
-Scripting (XSS) and can be a very dangerous attack. One way to avoid XSS is to sanitize all user-generated
-data before outputting it to your page by removing HTML tags with the `strip_tags` function or escaping
-characters with special meaning into their respective HTML entities with the `htmlentities`
-or `htmlspecialchars` functions.
+هر نوع داده‌ای با توجه به کاربردش می‌تواند به یک شکل _فیلتر_ شود. برای نمونه، زمانی که داده‌ی ورودی بدون بررسی و کنترل به صورت مستقیم در ساختار HTML قرار می‌گیرد این تهدید وجود دارد که عملیات غیرمجازی را توسط JavaScript روی وبسایت شما انجام دهد! این نوع آسیب‌پذیری، Cross-Site Scripting یا XSS نامیده می‌شود که یکی از خطرناکترین حملات متداول است. یک روش برای جلوگیری از این حمله، بررسی و کنترل داده‌ی ورودی کاربر قبل از قرار گرفتن در ساختار نهایی صفحه است که می‌تواند با استفاده از تابع `strip_tags` صورت پذیرد. برای نادیده گرفتن برخی کاراکترهای خاص توابعی مانند `htmlentities` و `htmlspecialchars` مورد استفاده قرار می‌گیرند.
 
-Another example is passing options to be executed on the command line. This can be extremely dangerous
-(and is usually a bad idea), but you can use the built-in `escapeshellarg` function to sanitize the executed
-command's arguments.
+نمونه‌ی دیگر استفاده از داده‌ی ورودی جهت اجرا در محیط خط فرمان است. این کار بسیار خطرناک (و در عین حال اصلا توصیه نمی‌شود) است اما می‌توان از تابع `escapeshellarg` برای بررسی و کنترل داده‌ی ارسالی استفاده کرد.
 
-One last example is accepting foreign input to determine a file to load from the filesystem. This can be exploited by
-changing the filename to a file path. You need to remove "/", "../", [null bytes][6], or other characters from the file path so it can't
-load hidden, non-public, or sensitive files.
+به عنوان نمونه‌ی آخر به دریافت فایل توسط کاربر از روی سرور اشاره می‌کنیم. این کار می‌تواند با تغییر نام فایل به مسیر فایل صورت بگیرد که در صورت بررسی نکردن داده‌ی ورودی، اطلاعات مهم سرور در اختیار دیگران قرار می‌گیرد. برای جلوگیری از این امر باید کاراکترهای "/"، "/.."، و [null bytes][6] یا سایر کاراکترها را حذف کرد تا منجر به نمایش مکان‌های مخفی در سرور نشوند.
 
-* [Learn about data filtering][1]
-* [Learn about `filter_var`][4]
-* [Learn about `filter_input`][5]
-* [Learn about handling null bytes][6]
+* [درباره‌ی بررسی و کنترل داده بیشتر بدانید][1]
+* [درباره‌ی تابع `filter_var` بیشتر بدانید][4]
+* [درباره‌ی تابع `filter_input` بیشتر بدانید][5]
+* [درباره‌ی بررسی و مدیریت بایت‌های خالی بیشتر بدانید][6]
 
-### Sanitization
+### پاکسازی داده‌ی ورودی
 
-Sanitization removes (or escapes) illegal or unsafe characters from foreign input.
+این فرآیند، با حذف یا نادیده‌گرفتن برخی کاراکترهای ناامن از داده‌ی ورودی، صورت می‌گیرد.
 
-For example, you should sanitize foreign input before including the input in HTML or inserting it
-into a raw SQL query. When you use bound parameters with [PDO](#databases), it will
-sanitize the input for you.
+برای نمونه، قبل از قرار دادن داده‌ی ورودی در خروجی نهایی یا درج آن در پایگاه‌داده باید آن را از کاراکترهای غیرمجاز پاکسازی کنید. عمل تخصیص پارامتر به یک پرس‌وجو توسط [PDO](#databases) اینکار را برای شما انجام می‌دهد.
 
-Sometimes it is required to allow some safe HTML tags in the input when including it in the HTML
-page. This is very hard to do and many avoid it by using other more restricted formatting like
-Markdown or BBCode, although whitelisting libraries like [HTML Purifier][html-purifier] exists for
-this reason.
+گاهی اوقات لازم است به برخی تگ‌های امن HTML اجازه‌ی قرارگیری در صفحه داده شود. مدیریت این فرآیند گاهی بسیار دشوار می‌شود تا جایی که برخی ترجیح می‌دهند از پیش‌پردازنده‌هایی مانند Markdown یا BBCode استفاده کنند و کتابخانه‌هایی مانند [HTML Purifier][html-purifier] به همین منظور وجود دارند.
 
-[See Sanitization Filters][2]
+[مشاهده‌ی فیلترهای به کار رفته در پاکسازی داده‌ی ورودی][2]
 
-### Validation
+### اعتبارسنجی
 
-Validation ensures that foreign input is what you expect. For example, you may want to validate an
-email address, a phone number, or age when processing a registration submission.
+این فرآیند به شما کمک می‌کند از صحت اطلاعات ورودی اطمینان حاصل کنید. برای نمونه، هنگام پردازش یک فرم ثبت‌نام، شاید بخواهید ایمیل، شماره تلفن یا سن فرد را بررسی و کنترل کنید.
 
-[See Validation Filters][3]
+[مشاهده‌ی فیلترهای به کار رفته در اعتبارسنجی داده‌ی ورودی][3]
 
 [1]: http://www.php.net/manual/en/book.filter.php
 [2]: http://www.php.net/manual/en/filter.filters.sanitize.php
