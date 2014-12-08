@@ -46,4 +46,3 @@ anchor: test_driven_development
 * [Mink](http://mink.behat.org)
 * [Codeception](http://codeception.com) یک چارچوب آزمون‌نویسی تمام-عیار است که شامل ابزارهای متفاوتی اس
 * [Storyplayer](http://datasift.github.io/storyplayer) یک چارچوب آزمون‌نویسی تمام-عیار است که از ایجاد و حذف محیط‌های شبیه‌سازی شده پشتیبانی می‌کند
-* [Storyplayer](http://datasift.github.io/storyplayer) is a full-stack testing framework that includes support for creating and destroying test environments on demand

@@ -686,7 +686,7 @@ blockquote {
   font-family: monospace;
   font-size: 16px;
   font-style: italic;
-  text-align: left;
+  text-align: right;
 }
 blockquote :last-child {
   margin-bottom: 0px !important;
