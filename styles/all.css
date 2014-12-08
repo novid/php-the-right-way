@@ -678,10 +678,10 @@ sub {
   font-size: 16px;
 }
 blockquote {
-  border-left: 5px solid rgba(0, 0, 0, 0.1);
-  margin-right: 20px !important;
+  border-right: 5px solid rgba(0, 0, 0, 0.1);
   margin-left: 20px !important;
-  padding-left: 20px !important;
+  margin-right: 20px !important;
+  padding-right: 20px !important;
   color: #999999;
   font-family: monospace;
   font-size: 16px;
