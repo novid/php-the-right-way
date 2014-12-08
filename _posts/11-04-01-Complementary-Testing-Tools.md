@@ -1,14 +1,15 @@
 ---
+title: ابزار مکمل برای آزمون‌نویسی
 isChild: true
 anchor: complementary_testing_tools
 ---
 
-## Complementary Testing Tools {#complementary_testing_tools_title}
+## ابزار مکمل برای آزمون‌نویسی {#complementary_testing_tools_title}
 
-Besides individual testing and behavior driven frameworks, there are also a number of generic frameworks and helper libraries useful for any preferred approach taken.
+علاوه بر چارچوب‌های معرفی شده، ابزارهای دیگری نیز برای آزمون‌نویسی وجود دارد که در ادامه به آن‌ها اشاره می‌کنیم.
 
-### Tool Links
+### پیوند به ابزارها
 
-* [Selenium](http://seleniumhq.org/) is a browser automation tool which can be [integrated with PHPUnit](http://phpunit.de/manual/current/en/selenium.html)
-* [Mockery](https://github.com/padraic/mockery) is a Mock Object Framework which can be integrated with [PHPUnit](http://phpunit.de/) or [PHPSpec](http://www.phpspec.net/)
-* [Prophecy](https://github.com/phpspec/prophecy) is a highly opinionated yet very powerful and flexible PHP object mocking framework. It's integrated with [PHPSpec](http://www.phpspec.net/) and can be used with [PHPUnit](http://phpunit.de/).
+* [Selenium](http://seleniumhq.org/) یک ابزار خودکارسازی در سطح مرورگر است که قابلیت [یکپارچگی با PHPUnit را دارد](http://phpunit.de/manual/current/en/selenium.html)
+* [Mockery](https://github.com/padraic/mockery) چارچوب شبیه‌سازی آزمون است که با  [PHPUnit](http://phpunit.de/) یا [PHPSpec](http://www.phpspec.net/) یکپارچه می‌شود
+* [Prophecy](https://github.com/phpspec/prophecy) چارچوب شبیه‌سازی آزمون در PHP است که با [PHPSpec](http://www.phpspec.net/) و [PHPUnit](http://phpunit.de/) مورد استفاده قرار می‌گیرد.

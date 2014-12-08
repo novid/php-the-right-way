@@ -1,13 +1,10 @@
 ---
+title: آزمون
 anchor: testing
 ---
 
-# Testing {#testing_title}
+# آزمون {#testing_title}
 
-Writing automated tests for your PHP code is considered a best practice and can lead to well-built
-applications. Automated tests are a great tool for making sure your application
-does not break when you are making changes or adding new functionality and should not be ignored.
+نوشتن آزمون‌های خودکار برای کد PHP یک عادت خوب محسوب می‌شود که منجر به تولید برنامه‌های خوش‌ساخت می‌گردد. آزمون‌های خودکار ابزارهای قدرتمندی هستند که زمان تغییر در برنامه اطمینان حاصل کنید چیزی به هم نمی‌ریزد یا در زمان اضافه‌کردن امکانات جدید، بخش‌های قبلی به کار خود ادامه می‌دهند.
 
-There are several different types of testing tools (or frameworks) available for PHP, which use 
-different approaches - all of which are trying to avoid manual testing and the need for large 
-Quality Assurance teams, just to make sure recent changes didn't break existing functionality.
+ابزارها یا چارچوب‌های مختلفی در این زمینه برای PHP وجود دارد که هر یک رویکرد متفاوتی پیش گرفته‌اند - ولی همه‌ی آن‌ها سعی دارند جلوی آزمون‌های دستی را گرفته و نیاز گروه‌هایی که مرتبط با تضمین کیفیت نرم‌افزار هستند را برآورده سازند، مهم‌تر اینکه تغییرات جدید عملکرد فعلی نرم‌افزار را مختل نسازند.

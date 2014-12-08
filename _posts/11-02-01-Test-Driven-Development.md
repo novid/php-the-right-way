@@ -1,35 +1,26 @@
 ---
+title: توسعه مبتنی بر آزمون
 isChild: true
 anchor: test_driven_development
 ---
 
-## Test Driven Development {#test_driven_development_title}
+## توسعه مبتنی بر آزمون {#test_driven_development_title}
 
-From [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development):
+از [ویکیپدیا](http://en.wikipedia.org/wiki/Test-driven_development):
 
-> Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: first the developer writes a failing automated test case that defines a desired improvement or new function, then produces code to pass that test and finally refactors the new code to acceptable standards. Kent Beck, who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple designs and inspires confidence
+> توسعه مبتنی بر آزمون یا TDD یک فرآیند توسعه‌ی نرم‌افزار است که از چرخه‌های بسیار کوتاه تشکیل شده است: توسعه‌دهنده نخست یک آزمون خودکار که منجر به شکست شود را طراحی کرده و بر اساس کاری که آن آزمون باید انجام دهد کد واقعی را می‌نویسد و در نهایت کد نوشته شده را بهبود می‌بخشد.Kent Beck ، کسی که توسعه یا 'بازآفرینی' این تکنیک منسوب به اوست در سال ۲۰۰۳ اعلام کرده است TDD مشوق طراحی‌های ساده و الهام‌بخش، اعتماد است
 
-There are several different types of testing that you can do for your application
+انواع مختلفی از آزمون‌نویسی وجود دارد که می‌توان از آن‌ها در برنامه‌های خود استفاده کرد.
 
-### Unit Testing
+### آزمون‌نویسی واحد
 
-Unit Testing is a programming approach to ensure functions, classes and methods are working as
-expected, from the point you build them all the way through the development cycle. By checking
-values going in and out of various functions and methods, you can make sure the internal logic is
-working correctly. By using Dependency Injection and building "mock" classes and stubs you can verify that dependencies are correctly used for even better test coverage.
+این سبک برنامه‌نویسی روشی است جهت اطمینان از اینکه تمام توابع، کلاس‌ها و متدها در طول چرخه‌ی نرم‌افزار همانگونه که مد نظر است کار کنند. با بررسی داده‌های ورودی و خروجی به/از توابع و متدها، می‌توان از منطق داخلی نرم‌افزار اطمینان حاصل کرد. با استفاده از Dependency Injection و نمونه‌سازی از کلاس‌ها می‌توان استفاده‌ی صحیح از وابستگی‌های موجود در نرم‌افزار را مورد بررسی قرار داد.
 
-When you create a class or function you should create a unit test for each behavior it must have. At a very basic level you should
-make sure it errors if you send it bad arguments and make sure it works if you send it valid arguments.
-This will help ensure that when you make changes to this class or function later on in the development
-cycle that the old functionality continues to work as expected. The only alternative to this would be
-var_dump() in a test.php, which is no way to build an application - large or small.
+زمانی که یک کلاس یا تابع به وجود می‌آورید باید برای هر عملکردی که از آن مد نظر است نیز یک آزمون بنویسید. به عنوان اولین گام، باید اطمینان حاصل کنید هنگام دریافت ورودی اشتباه، خطا و هنگام دریافت ورودی صحیح، خروجی باز می‌گردد. این تکنیک به شما کمک می‌کند هر زمان تغییری در این کلاس یا تابع به وجود بیاورید عملکرد سابق آن به قوت خود باقی است. تنها جایگزین این روش استفاده از تابع `()var_dump` در فایل test.php است، که در عمل روش درستی برای تولید نرم‌افزار نیست - چه آن نرم‌افزار کوچک باشد چه بزرگ.
 
-The other use for unit tests is contributing to open source. If you can write a test that shows broken
-functionality (i.e. fails), then fix it, and show the test passing, patches are much more likely to be accepted. If
-you run a project which accepts pull requests then you should suggest this as a requirement.
+کاربرد دیگر این سبک آزمون‌نویسی مشارکت در پروژه‌های آزاد است. اگر می‌توانید آزمونی بنویسید که نواقص بخشی از یک نرم‌افزار را مشخص کند، پس بهتر است آن را بر طرف کرده و آزمون دیگری بنویسید که نشان دهد مشکل رفع شده است چرا که تولید وصله، بیشتر مورد استقبال قرار می‌گیرد. اگر پروژه‌ای دارید که به صورت عمومی درخواست دیگران را جهت مشارکت می‌پذیرد باید این عملکرد را به عنوان یک پیشنیاز مطرح کنید.
 
-[PHPUnit](http://phpunit.de) is the de-facto testing framework for writing unit tests for PHP
-applications, but there are several alternatives
+[PHPUnit](http://phpunit.de) مهم‌ترین چارچوب استاندارد آزمون‌نویسی در PHP است، اما راه حل‌های دیگری نیز وجود دارند:
 
 * [atoum](https://github.com/atoum/atoum)
 * [Enhance PHP](https://github.com/Enhance-PHP/Enhance-PHP)
@@ -37,25 +28,22 @@ applications, but there are several alternatives
 * [SimpleTest](http://simpletest.org)
 
 
-### Integration Testing
+### آزمون‌نویسی یکپارچه
 
-From [Wikipedia](http://en.wikipedia.org/wiki/Integration_testing):
+از [ویکیپدیا](http://en.wikipedia.org/wiki/Integration_testing):
 
-> Integration testing (sometimes called Integration and Testing, abbreviated "I&T") is the phase in software testing in which individual software modules are combined and tested as a group. It occurs after unit testing and before validation testing. Integration testing takes as its input modules that have been unit tested, groups them in larger aggregates, applies tests defined in an integration test plan to those aggregates, and delivers as its output the integrated system ready for system testing.
+> آزمون‌نویسی یکپارچه (که یکپارچگی یا آزمون‌نویسی نیز خوانده می‌شود، به طور مخفف "I&T") مرحله‌ای از آزمون نرم‌افزار است که قسمت‌های مختلف را با در کنار هم قرار دادن، بررسی می‌کند. معمولا پس از آزمون‌نویسی واحد و قبل از آزمون‌نویسی اعتبارسنجی صورت می‌گیرد. این روش، ورودی خود را یک افزونه از نرم‌افزار قرار می‌دهد، آن‌ها را گروه‌بندی می‌کند و روی گروه تشکیل شده آزمون‌های مورد نظر را اعمال می‌کند.
 
-Many of the same tools that can be used for unit testing can be used for integration testing as many
-of the same principles are used.
+بسیاری از ابزارهای مورد استفاده در آزمون‌نویسی واحد، در این سبک نیز کاربرد دارند و بسیاری از قوانین آن‌ها نیز اینجا صادق است.
 
-### Functional Testing
+### آزمون‌نویسی کاربردی
 
-Sometimes also known as acceptance testing, functional testing consists of using tools to create automated
-tests that actually use your application instead of just verifying that individual units of code are behaving
-correctly and that individual units can speak to each other correctly. These tools typically work using real
-data and simulating actual users of the application.
+این سبک از آزمون‌نویسی از مجموعه ابزاری تشکیل شده است که در عمل نرم‌افزار نهایی را مورد آزمون قرار می‌دهند نه تنها بخش‌های کوچکی از آن را. این ابزارها معمولا با ایجاد داده‌های واقعی و شبیه‌سازی محیط حقیقی نرم‌افزار، به این کار می‌پردازند.
 
-#### Functional Testing Tools
+#### ابزارهای مورد استفاده در آزمون‌نوسی کاربردی
 
 * [Selenium](http://seleniumhq.com)
 * [Mink](http://mink.behat.org)
-* [Codeception](http://codeception.com) is a full-stack testing framework that includes acceptance testing tools
+* [Codeception](http://codeception.com) یک چارچوب آزمون‌نویسی تمام-عیار است که شامل ابزارهای متفاوتی اس
+* [Storyplayer](http://datasift.github.io/storyplayer) یک چارچوب آزمون‌نویسی تمام-عیار است که از ایجاد و حذف محیط‌های شبیه‌سازی شده پشتیبانی می‌کند
 * [Storyplayer](http://datasift.github.io/storyplayer) is a full-stack testing framework that includes support for creating and destroying test environments on demand
