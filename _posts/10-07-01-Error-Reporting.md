@@ -19,13 +19,13 @@ anchor: error_reporting
 
 > استفاده از `1-` تمام خطاهای موجود را نمایش می‌دهد، حتی آن‌هایی که در نسخه‌های بعدی PHP به وجود بیایند. ثابت `E_ALL` رفتاری مشابه به این عملکرد را در نسخه‌ی PHP 5.4 دارد. - [php.net](http://php.net/manual/function.error-reporting.php)
 
-سطح خطا `E_STRICT` در نسخه‌ی PHP 5.3.0 معرفی شد و قسمتی از `E_ALL` نیست، اگرچه در نسخه‌ی PHP 5.4.0 به قسمتی از `E_ALL` تبدیل شد. این به چه معناست؟ در نسخه‌ی PHP 5.3 اگر بخواهید تمام خطاهای موجود را ببینید باید از `1-` یا `E_ALL | E_STRICT` استفاه کنید.
+سطح خطا `E_STRICT` در نسخه‌ی 5.3.0 معرفی شد و قسمتی از `E_ALL` نیست، اگرچه در نسخه‌ی 5.4.0 به قسمتی از `E_ALL` تبدیل شد. این به چه معناست؟ در نسخه‌ی 5.3 اگر بخواهید تمام خطاهای موجود را ببینید باید از `1-` یا `E_ALL | E_STRICT` استفاه کنید.
 
 **گزارش خطا با توجه به نسخه‌های مختلف PHP**
 
-* &lt; 5.3 `-1` یا `E_ALL`
-* &nbsp; 5.3 `-1` یا `E_ALL | E_STRICT`
 * &gt; 5.3 `-1` یا `E_ALL`
+* &nbsp; 5.3 `-1` یا `E_ALL | E_STRICT`
+* &lt; 5.3 `-1` یا `E_ALL`
 
 ### محیط نهایی
 
@@ -37,8 +37,6 @@ anchor: error_reporting
     log_errors = On
 
 با استفاده از این تنظیمات، خطاها کماکان در سرور ثبت می‌شوند اما به کاربر نمایش داده نمی‌شوند. برای اطلاعات بیشتر درباره‌ی این تنظیمات، راهنمای رسمی PHP را مشاهده کنید:
-With these settings in production, errors will still be logged to the error logs for the web server, but will not be 
-shown to the user. For more information on these settings, see the PHP manual:
 
 * [error_reporting](http://php.net/manual/errorfunc.configuration.php#ini.error-reporting)
 * [display_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-errors)
