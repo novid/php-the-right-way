@@ -1,29 +1,30 @@
 ---
+title: سرورهای مجازی یا اختصاصی
 isChild: true
 anchor: virtual_or_dedicated_servers
 ---
 
-## Virtual or Dedicated Servers {#virtual_or_dedicated_servers_title}
+## سرورهای مجازی یا اختصاصی {#virtual_or_dedicated_servers_title}
 
-If you are comfortable with systems administration, or are interested in learning it, virtual or dedicated servers give you complete control of your application's production environment.
+اگر با مدیریت سیستم آشنا هستید یا قصد یادگیری آن را دارید، سرورهای مجازی یا اختصاصی قدرت کامل در اختیار گرفتن محیط اجرای برنامه‌ها را، به شما می‌دهند.
 
-### nginx and PHP-FPM
+### nginx و PHP-FPM
 
-PHP, via PHP's built-in FastCGI Process Manager (FPM), pairs really nicely with [nginx](http://nginx.org), which is a lightweight, high-performance web server. It uses less memory than Apache and can better handle more concurrent requests. This is especially important on virtual servers that don't have much memory to spare.
+ماژول قدرتمندی در PHP وجود دارد با نام مدیر فرآیند FastCGI یا FPM و قابلیت انطباق بالایی با [nginx](http://nginx.org) دارد که وب‌سروری است سبک و با قابلیت اجرایی بسیار بالا. نسبت به Apache از حافظه‌ی کمتری استفاده می‌کند و بهتر می‌تواند درخواست‌های همزمان را مدیریت کند. این امر درباره‌ی سرورهای مجازی که از حافظه‌ی کمتری استفاده می‌کنند اهمیت بسیار زیادی دارد.
 
-* [Read more on nginx](http://nginx.org)
-* [Read more on PHP-FPM](http://php.net/manual/en/install.fpm.php)
-* [Read more on setting up nginx and PHP-FPM securely](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
+* [درباره‌ی nginx بیشتر بخوانید](http://nginx.org)
+* [درباره‌ی PHP-FPM بیشتر بخوانید](http://php.net/manual/en/install.fpm.php)
+* [درباره‌ی راه‌اندازی امن nginx با PHP-FPM بیشتر بخوانید](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
 
-### Apache and PHP
+### Apache و PHP
 
-PHP and Apache have a long history together. Apache is wildly configurable and has many available [modules](http://httpd.apache.org/docs/2.4/mod/) to extend functionality. It is a popular choice for shared servers and an easy setup for PHP frameworks and open source apps like WordPress. Unfortunately, Apache uses more resources than nginx by default and cannot handle as many visitors at the same time.
+تاریخچه‌ی طولانی بین PHP و Apache وجود دارد. آپاچی قابلیت تنظیم بالایی دارد و برای اینکار از [ماژول‌های](http://httpd.apache.org/docs/2.4/mod/) بسیاری بهره می‌گیرد. در بین سرورهای اشتراکی بسیار محبوب است و به سادگی می‌توان روی آن بسیاری از چارچوب‌های نرم‌افزاری PHP و برنامه‌های اُپن‌سورس مانند وُردپِرس را راه‌اندازی کرد. متاسفانه‌، آپاچی از منابع بیشتری نسبت به nginx استفاده می‌کند به خوبی آن نمی‌تواند بازدیدکنندگان همزمان با تعداد بالا را مدیریت کند.
 
-Apache has several possible configurations for running PHP. The most common and easiest to setup is the [prefork MPM](http://httpd.apache.org/docs/2.4/mod/prefork.html) with mod_php5. While it isn't the most memory efficient, it is the simplest to get working and to use. This is probably the best choice if you don't want to dig too deeply into the server administration aspects.  Note that if you use mod_php5 you MUST use the prefork MPM.
+آپاچی پیکربندی‌های متفاوتی جهت اجرای PHP دارد. معمول‌ترین آن‌ها برای راه‌اندازی [prefork MPM](http://httpd.apache.org/docs/2.4/mod/prefork.html) با استفاده از ماژول mod_php5 است. با اینکه بهینه‌ترین روش جهت مدیریت حافظه نیست اما ساده‌ترین آن‌ها برای استفاده است. اگر قصد ندارید به جنبه‌های مختلف مدیریت سیستم بپردازید، این روش مناسب شماست. به یاد داشته باشید استفاده از ماژول mod_php5 مستلزم استفاده از prefork MPM است.
 
-Alternatively, if you want to squeeze more performance and stability out of Apache then you can take advantage of the same FPM system as nginx and run the [worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) or [event MPM](http://httpd.apache.org/docs/2.4/mod/event.html) with mod_fastcgi or mod_fcgid. This configuration will be significantly more memory efficient and much faster but it is more work to set up.
+از طرف دیگر، اگر قصد بهره‌گیری از قدرت اجرای بالاتر و پایدارتر شدن آپاچی را دارید می‌توانید از همان سیستم FPM موجود در nginx که در آپاچی با ماژول‌های [worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) یا [event MPM](http://httpd.apache.org/docs/2.4/mod/event.html) و با استفاده از mod_fastcgi یا mod_fcgid پیاده‌سازی شده است، استفاده کنید. این پیکربندی مصرف حافظه را بهبود بخشیده و سرعت بالایی به همراه می‌آورد اما زمان بیشتری جهت پیکربندی خواهد برد.
 
-* [Read more on Apache](http://httpd.apache.org/)
-* [Read more on Multi-Processing Modules](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
-* [Read more on mod_fastcgi](http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html)
-* [Read more on mod_fcgid](http://httpd.apache.org/mod_fcgid/)
+* [درباره‌ی آپاچی بیشتر بخوانید](http://httpd.apache.org/)
+* [درباره‌ی ماژول‌های چندپردازشی بیشتر بخوانید](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
+* [درباره‌ی mod_fastcgi بیشتر بخوانید](http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html)
+* [درباره‌ی mod_fcgid بیشتر بخوانید](http://httpd.apache.org/mod_fcgid/)

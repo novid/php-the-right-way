@@ -1,7 +1,8 @@
 ---
+title: سرورها و توسعه‌ی آن‌ها
 anchor: servers_and_deployment
 ---
 
-# Servers and Deployment {#servers_and_deployment_title}
+# سرورها و توسعه‌ی آن‌ها {#servers_and_deployment_title}
 
-PHP applications can be deployed and run on production web servers in a number of ways.
+برنامه‌های PHP به روش‌های متفاوتی روی سرورهای حقیقی می‌توانند اجرا شوند یا توسعه یابند.

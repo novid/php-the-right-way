@@ -1,76 +1,56 @@
 ---
+title: ایجاد و راه‌اندازی نرم‌افزار خود
 isChild: true
 anchor: building_and_deploying_your_application
 ---
 
-## Building and Deploying your Application {#building_and_deploying_your_application_title}
+## ایجاد و راه‌اندازی نرم‌افزار خود {#building_and_deploying_your_application_title}
 
-If you find yourself doing manual database schema changes or running your tests manually before updating your files 
-(manually), think twice! With every additional manual task needed to deploy a new version of your app, the chances for 
-potentially fatal mistakes increase. Whether you're dealing with a simple update, a comprehensive build process or 
-even a continuous integration strategy, [build automation](http://en.wikipedia.org/wiki/Build_automation) is your 
-friend.
+اگر تغییرات مربوط به پایگاه‌داده را دستی انجام می‌دهید یا آزمون‌های نوشته شده را به صورت دستی اجرا می‌کنید، بهتر است دوباره بیندیشید! با انجام هر کار به صورت دستی در هر نسخه‌ از نرم‌افزار خود احتمال بروز خطای مهلک افزایش می‌یابد. خواه تغییر کوچکی اعمال کنید یا با یک فرآیند ساخت پیچیده روبه‌رو باشید، [خودکارسازی فرآیند تولید](http://en.wikipedia.org/wiki/Build_automation) به کمک شما می‌آید.
 
-Among the tasks you might want to automate are:
+از میان کارهایی که قصد خودکارسازی آن‌ها را دارید می‌توان به موارد زیر اشاره کرد:
 
-* Dependency management
-* Compilation, minification of your assets
-* Running tests
-* Creation of documentation
-* Packaging
-* Deployment
+* مدیریت وابستگی
+* کامپایل کردن و کم حجم ساختن منابع مورد نیاز
+* اجرای آزمون‌های مختلف
+* ایجاد مستندات گوناگون
+* بسته‌بندی و طبقه‌بندی نرم‌افزار
+* راه‌اندازی نهایی
 
+### ابزارهای خودکارسازی فرآیند تولید
 
-### Build Automation Tools
+این ابزارها معمولا از تعدادی اسکریپت تشکیل شده‌اند که فرآیند توسعه‌ی نرم‌افزار را آسان می‌کنند. ابزار تولید، بخشی از نرم‌افزار شما نیست، بلکه از بیرون آن را مدیریت می‌کند.
 
-Build tools can be described as a collection of scripts that handle common tasks of software deployment. The build 
-tool is not a part of your software, it acts on your software from 'outside'.
+ابزارهای اُپِن سورس بسیاری در این رابطه وجود دارند، که برخی از آن‌ها نیز با PHP نوشته شده‌اند. این نباید منجر به استفاده نکردن از آن‌ها شود، اگر برای کار خاصی مورد نیاز باشند. چند نمونه عبارتند از:
 
-There are many open source tools available to help you with build automation, some are written in PHP others aren't. 
-This shouldn't hold you back from using them, if they're better suited for the specific job. Here are a few examples:
+[Phing](http://www.phing.info) متداول‌ترین ابزار مورد استفاده در خودکارسازی فرآیند تولید است که در دنیای PHP بسیار مورد استفاده قرار می‌گیرد. با استفاده از Phing شما می‌توانید کنترل بسته‌بندی، راه‌اندازی و اجرای آزمون‌ها را تنها از یک فایل XML مدیریت کنید. این ابزار (که مبتنی بر [Apache Ant](http://ant.apache.org/) است) فعالیت‌های بسیاری را جهت نصب و بروزرسانی نرم‌افزار تحت وب فراهم می‌آورد و امکان توسعه‌پذیری بالایی دارد، که می‌توان با استفاده از خود PHP اینکار را انجام داد.
 
-[Phing](http://www.phing.info/) is the easiest way to get started with automated deployment in the PHP world. With 
-Phing you can control your packaging, deployment or testing process from within a simple XML build file. Phing (which 
-is based on [Apache Ant](http://ant.apache.org/)) provides a rich set of tasks usually needed to install or update a 
-web app and can be extended with additional custom tasks, written in PHP.
+[Capistrano](https://github.com/capistrano/capistrano/wiki) یک سیستم *متوسط-به-بالا برای برنامه‌نویسان* است که اجازه‌ی اجرای فرما‌ن‌های مختلف را به روشی ساخت‌یافته، روی یک یا چند ماشین می‌دهد. اگرچه به منظور توسعه‌ی برنامه‌های Ruby on Rails ایجاد شده است اما بسیاری **موفق شده‌اند PHP را روی آن توسعه دهند**. استفاده کاربردی از Capistrano مستلزم داشتن دانش کافی درباره‌ی Ruby on Rails است.
 
-[Capistrano](https://github.com/capistrano/capistrano/wiki) is a system for *intermediate-to-advanced programmers* to 
-execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying 
-Ruby on Rails applications, however people are **successfully deploying PHP systems** with it. Successful use of 
-Capistrano depends on a working knowledge of Ruby and Rake.
+برای توسعه‌دهندگانی که قصد استفاده از Capistrano روی نرم‌افزار PHP خود را دارند، نوشته‌ی Dave Gardner با عنوان [توسعه‌ی PHP با Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/) نقطه‌ی آغاز مناسبی است.
 
-Dave Gardner's blog post [PHP Deployment with Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/) 
-is a good starting point for PHP developers interested in Capistrano.
+[Chef](http://www.opscode.com/chef/) بیش از یک چارچوب راه‌اندازی کاربرد دارد، یک سیستم بسیار قدرتمند براساس Ruby است که نه تنها برای توسعه‌ی نرم‌افزار کاربرد دارد بلکه زیرساخت اولیه یک یا چند سرور را می‌تواند پیاده‌سازی کند.
 
-[Chef](http://www.opscode.com/chef/) is more than a deployment framework, it is a very powerful Ruby based system 
-integration framework that doesn't just deploy your app but can build your whole server environment or virtual boxes.
+منابع Chef برای توسعه‌دهندگان PHP:
 
-Chef resources for PHP developers:
+* [مجموعه وبلاگ درباره‌ی پیاده‌سازی LAMP با استفاده از Chef](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
+* [کتاب راهنمای Chef با تمرکز بر نصب PHP 5.3 و سیستم مدیریت بسته PEAR](https://github.com/opscode-cookbooks/php)
 
-* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
-* [Chef Cookbook which installs and configures PHP 5.3 and the PEAR package management system](https://github.com/opscode-cookbooks/php)
+مطالعه‌ی بیشتر:
 
-Further reading:
-
-* [Automate your project with Apache Ant](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
-* [Maven](http://maven.apache.org/), a build framework based on Ant and [how to use it with PHP](http://www.php-maven.org/)
+* [فرآیند خودکارسازی پروژه با استفاده از Apache Ant](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
+* [Maven](http://maven.apache.org/) ، چارچوب تولید مبتنی بر Ant و اینکه [چگونه با PHP استفاده شود](http://www.php-maven.org/)
 
 ### Continuous Integration
 
-> Continuous Integration is a software development practice where members of a team integrate their work frequently, 
-> usually each person integrates at least daily — leading to multiple integrations per day. Many teams find that this 
-> approach leads to significantly reduced integration problems and allows a team to develop cohesive software more 
-> rapidly.
+> یک فرآیند توسعه‌ی نرم‌افزار است که طی آن اعضای یک تیم کار روزانه‌ی خود را با سایر اعضا یکپارچه می‌سازند، که ممکن است این عمل چند  > مرتبه در روز صورت گیرد. بسیاری از تیم‌ها به این نتیجه رسیده‌اند که این عمل منجر به یکپارچگی بیشتری در محصول نهایی خواهد شد و به  > تیم این اجازه را می‌دهد که در زمان کوتاه‌تری فرآیند توسعه را سپری کنند.
 
 *-- Martin Fowler*
 
-There are different ways to implement continuous integration for PHP. Recently [Travis CI](https://travis-ci.org/) has 
-done a great job of making continuous integration a reality even for small projects. Travis CI is a hosted continuous 
-integration service for the open source community. It is integrated with GitHub and offers first class support for many 
-languages including PHP.
+روش‌های مختلفی جهت پیاده‌سازی این فرآیند در PHP وجود دارد. اخیرا [Travis CI](https://travis-ci.org/) موفق شده است این تکنیک را در بسیاری از پروژه‌ها پیاده‌سازی کند، حتی پروژه‌های کوچک. Travis CI یک سرویس آنلاین است که در اختیار جامعه‌ی اِپِن سورس قرار دارد. این ابزار با GitHub یکپارچه شده است و پشتیبانی خوبی از زبان‌های برنامه‌نویسی موجود، از جمله PHP دارد.
 
-Further reading:
+مطالعه‌ی بیشتر:
 
-* [Continuous Integration with Jenkins](http://jenkins-ci.org/)
-* [Continuous Integration with PHPCI](http://www.phptesting.org/)
-* [Continuous Integration with Teamcity](http://www.jetbrains.com/teamcity/)
+* [یکپارچگی مداوم با Jenkins](http://jenkins-ci.org/)
+* [یکپارچگی مداوم با PHPCI](http://www.phptesting.org/)
+* [یکپارچگی مداوم با Teamcity](http://www.jetbrains.com/teamcity/)

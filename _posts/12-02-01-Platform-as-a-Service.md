@@ -1,13 +1,11 @@
 ---
-title: Platform as a Service (PaaS)
+title: Platform as a Service یا (PaaS)
 isChild: true
 anchor: platform_as_a_service
 ---
 
 ## Platform as a Service (PaaS)  {#platform_as_a_service_title}
 
-PaaS provides the system and network architecture necessary to run PHP applications on the web. This means little to no 
-configuration for launching PHP applications or PHP frameworks. 
+بستر PaaS معماری سیستم و شبکه‌ی مورد نیاز جهت اجرای برنامه‌های PHP را فراهم می‌کند. این بدان معناست که تغییرات ناچیزی جهت اجرای برنامه‌های PHP یا چارچوب‌های نرم‌افزاری PHP در این بستر، مورد نیاز است.
 
-Recently PaaS has become a popular method for deploying, hosting, and scaling PHP applications of all sizes. You can 
-find a list of [PHP PaaS "Platform as a Service" providers](#php_paas_providers) in our [resources section](#resources). 
+اخیرا بستر PaaS به روشی متداول جهت توسعه، میزبانی و مقیاس‌پذیری برنامه‌های PHP در ابعاد مختلف تبدیل شده است. شما می‌توانید فهرستی از [فراهم‌آورندگان بستر PaaS برای PHP](#php_paas_providers) را در قسمت [منابع](#resources) مشاهده کنید.

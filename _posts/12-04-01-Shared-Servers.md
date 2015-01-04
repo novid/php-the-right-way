@@ -1,8 +1,9 @@
 ---
+title: سرورهای اشتراکی
 isChild: true
 anchor: shared_servers
 ---
 
-## Shared Servers {#shared_servers_title}
+## سرورهای اشتراکی {#shared_servers_title}
 
-PHP has shared servers to thank for its popularity. It is hard to find a host without PHP installed, but be sure it's the latest version. Shared servers allow you and other developers to deploy websites to a single machine. The upside to this is that it has become a cheap commodity. The downside is that you never know what kind of a ruckus your neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If your project's budget can afford to avoid shared servers you should.
+سرورهای اشتراکی بسیاری، برای اجرای PHP به خاطر محبوبیت آن وجود دارند. به ندرت می‌توان سرویس میزبانی پیدا کرد که از PHP پشتیبانی نکند، اما باید توجه کرد از نسخه‌ی پایدار آن بهره گیرد. سرورهای اشتراکی به شما و سایر توسعه‌دهندگان اجازه می‌دهند وب‌سایت‌های خود را روی یک و تنها یک ماشین مجزا راه‌اندازی کنید. این سرورها باعث شده‌اند تجارت‌های بسیاری به سمت نرم‌افزارهای تحت وب کشیده شوند چرا که هزینه‌ی پایینی برایشان به همراه دارد. از طرفی شما هیچگاه متوجه نمی‌شوید همسایه‌تان (فردی که از همان سرور اشتراکی استفاده می‌کند و به همان منابع دسترسی دارد) قصد انجام چه کاری دارد; بار اضافه روی سرور گذاشتن و ایجاد حفره‌های امنیتی، مهمترین دغدغه‌‌های این نوع سرورها هستند. اگر بودجه‌ی پروژه‌ی شما این اجازه را می‌دهد که از سرورهای بهتر استفاده کنید، پس حتما این کار را بکنید.
