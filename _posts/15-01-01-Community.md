@@ -5,8 +5,7 @@ anchor: community
 
 # جامعه‌کاربری {#community_title}
 
-جامعه‌ی PHP از طیف افراد گوناگونی با قابلیت‌های گوناگون به وجود آمده است و همیشه آماّده‌ی پذیرش برنامه‌نویسان جدید است. سعی کنید در گروه کاربری PHP شهر خود (PUG) شرکت کنید تا دانش مطرح شده در این وبسایت را بهتر درک کنید. همچنین در شبکه‌ی IRC و کانال phpc# روی [irc.freenode.com]php-irc می‌توانید حضور داشته باشید و حساب کاربری [phpc@][phpc-twitter] در توییتر را دنبال کنید. به محفل آن‌ها بپیوندید، با توسعه‌دهندگان جدیدی آشنا شوید، مباحث تازه‌ای فرا گیرید و از همه مهم‌تر، دوستان جدیدی پیدا کنید! سایر شبکه‌ها عبارتند از گوگل‌پلاس [php-programmers-gplus] و [StackOverflow][php-so]
-The PHP community is as diverse as it is large, and its members are ready and willing to support new PHP programmers. Consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best practices shown here. You can hang out on IRC in the #phpc channel on [irc.freenode.com][php-irc] and follow the [@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics, and above all, make new friends! Other community resources include the Google+ PHP [Programmer community][php-programmers-gplus] and [StackOverflow][php-so].
+جامعه‌ی PHP از طیف افراد گوناگونی با قابلیت‌های گوناگون به وجود آمده است و همیشه آماّده‌ی پذیرش برنامه‌نویسان جدید است. سعی کنید در گروه کاربری PHP شهر خود (PUG) شرکت کنید تا دانش مطرح شده در این وبسایت را بهتر درک کنید. همچنین در شبکه‌ی IRC و کانال phpc# روی [irc.freenode.com][php-irc] می‌توانید حضور داشته باشید و حساب کاربری [phpc@][phpc-twitter] در توییتر را دنبال کنید. به محفل آن‌ها بپیوندید، با توسعه‌دهندگان جدیدی آشنا شوید، مباحث تازه‌ای فرا گیرید و از همه مهم‌تر، دوستان جدیدی پیدا کنید! سایر شبکه‌ها عبارتند از گوگل‌پلاس [php-programmers-gplus] و [StackOverflow][php-so]
 
 [مطالعه‌ی تقویم رویدادهای رسمی PHP][php-calendar]
 
