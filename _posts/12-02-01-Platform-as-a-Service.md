@@ -4,7 +4,7 @@ isChild: true
 anchor: platform_as_a_service
 ---
 
-## Platform as a Service (PaaS)  {#platform_as_a_service_title}
+## Platform as a Service یا (PaaS)  {#platform_as_a_service_title}
 
 بستر PaaS معماری سیستم و شبکه‌ی مورد نیاز جهت اجرای برنامه‌های PHP را فراهم می‌کند. این بدان معناست که تغییرات ناچیزی جهت اجرای برنامه‌های PHP یا چارچوب‌های نرم‌افزاری PHP در این بستر، مورد نیاز است.
 
