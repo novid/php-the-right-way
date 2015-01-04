@@ -7,8 +7,8 @@ anchor: resources
 
 ## مستندات رسمی
 
-* [PHP Website](http://php.net/)
-* [PHP Documentation](http://php.net/docs.php)
+* [وبسایت PHP](http://php.net/)
+* [مستندات PHP](http://php.net/docs.php)
 
 ## چه کسانی را دنبال کنم؟
 
