@@ -1,8 +1,8 @@
 ---
+title: ذخیره‌سازی موقت
 anchor: caching
 ---
 
-# Caching {#caching_title}
+# ذخیره‌سازی موقت {#caching_title}
 
-PHP is pretty quick by itself, but bottlenecks can arise when you make remote connections, load files, etc. 
-Thankfully, there are various tools available to speed up certain parts of your application, or reduce the number of times these various time-consuming tasks need to run.
+به صورت پیش فرض PHP زبان سریعی است اما ممکن است گاهی اوقات گلوگاه‌هایی ایجاد شود که منجر به کند شدن نرم‌افزار گردند مانند اتصال به سرورهای دیگر، بارگیری فایل و موارد دیگر. خوشبختانه، ابزارهای مختلفی وجود دارند که می‌توانند به قسمتی از نرم‌افزار شما سرعت بخشند یا باعث پیشگیری از تعداد دفعاتی شوند که عملیات زمان‌بر نام برده، کل نرم‌افزار را تحت تاثیر قرار می‌دهند.

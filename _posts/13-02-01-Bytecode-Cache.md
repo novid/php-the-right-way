@@ -1,22 +1,20 @@
 ---
+title: ذخیره‌سازی Bytecode
 isChild: true
 anchor: bytecode_cache
 ---
 
-## Bytecode Cache {#bytecode_cache_title}
+## ذخیره‌سازی Bytecode {#bytecode_cache_title}
 
-When a PHP file is executed, under the hood it is first compiled to bytecode (also known as opcode) and, only then, the bytecode is executed.
-If a PHP file is not modified, the bytecode will always be the same. This means that the compilation step is a waste of CPU resources.
+زمانی که یک فایل PHP اجرا می‌شود، در پشت صحنه ابتدا به یک فایل bytecode یا opcode کامپایل شده، سپس این فایل bytecode اجرا می‌شود. اگر فایل PHP تغییر نکند، خروجی bytecode همیشه ثابت خواهد بود. این بدان معناست که عملیات کامپایل در این صورت فقط منابع پردازنده را هدر می‌دهد.
 
-This is where Bytecode cache comes in. It prevents redundant compilation by storing bytecode in memory and reusing it on successive calls.
-Setting up bytecode cache is a matter of minutes, and your application will speed up significantly. There's really no reason not to use it.
+این دقیقا جایی است که ذخیره‌سازی Bytecode به میان می‌آید. این عمل منجر به نگهداری فایل bytecode در حافظه شده و از کامپایل مجدد و بیهوده‌ی آن جلوگیری می‌کند. پیاده‌سازی این نوع ذخیره‌سازی تنها چند دقیقه زمان می‌برد و بعد از آن متوجه افزایش سرعت نرم‌افزار خواهید شد. حقیقتا دلیلی وجود ندارد که از آن استفاده نکنیم.
 
-As of PHP 5.5, there is a built-in bytecode cache called [OPcache](http://php.net/manual/en/book.opcache.php). This is
-also available for earlier versions.
+با انتشار PHP 5.5، یک ذخیره‌ساز درونی به نام [OPcache](http://php.net/manual/en/book.opcache.php) وجود دارد. البته برای نسخه‌های قبل از آن نیز موجود بود.
 
-Other popular bytecodes caches are:
+سایر ذخیره‌سازهای Bytecode عبارتند از:
 
-* [APC](http://php.net/manual/en/book.apc.php) (PHP 5.4 and earlier)
+* [APC](http://php.net/manual/en/book.apc.php) (PHP 5.4 و قبل از آن)
 * [XCache](http://xcache.lighttpd.net/)
-* [Zend Optimizer+](http://www.zend.com/products/server/) (part of Zend Server package)
-* [WinCache](http://www.iis.net/download/wincacheforphp) (extension for MS Windows Server)
+* [Zend Optimizer+](http://www.zend.com/products/server/) (قسمتی از زِند سرور)
+* [WinCache](http://www.iis.net/download/wincacheforphp) (افزونه‌ای برای ویندوز سرور)
