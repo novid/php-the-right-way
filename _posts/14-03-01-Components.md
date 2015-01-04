@@ -1,27 +1,24 @@
 ---
+title: بسته‌ها
 isChild: true
 anchor: components
 ---
 
-## Components {#components_title}
+## بسته‌ها {#components_title}
 
-As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing shared code. Various
-component repositories exist, the main two of which are:
+همان‌طور که اشاره شد "بسته‌ها" رویکرد دیگری برای ایجاد، توزیع و پیاده‌سازی یک هدف مشخص هستند. مخازن گوناگونی برای نگهداری از این بسته‌ها وجود دارند، دو تا از اصلی‌ترین این مخازن عبارتند از:
 
 * [Packagist](/#composer_and_packagist)
 * [PEAR](/#pear)
 
-Both of these repositories have command line tools associated with them to help the installation and upgrade 
-processes, and have been explained in more detail in the [Dependency Management] section.
+هر کدام از این مخازن دارای ابزار مدیریت قدرتمندی در خط فرمان هستند که اجازه‌ی نصب و بروزرسانی تمام بسته‌های مورد نیاز را به شما می‌دهند، این مخازن پیش‌تر در قسمت [مدیریت وابستگی] توضیح داده شدند.
 
-There are also component-based frameworks and component-vendors that offer no framework at all. These projects provide 
-another source of packages which ideally have little to no dependencies on other packages, or specific frameworks.
+دسته‌ی دیگری از بسته‌ها وجود دارند که در این مخازن نگهداری نمی‌شوند اما هیچ وابستگی هم به سایر بسته‌ها یا چارچوب‌های نرم‌افزاری دیگر ندارند.
 
-For example, you can use the [FuelPHP Validation package], without needing to use the FuelPHP framework 
-itself.
+برای نمونه، می‌توانید از [بسته‌ی اعتبارسنجی FuelPHP] بدون استفاده از چارچوب نرم‌افزاری FuelPHP استفاده کنید.
 
-  [Dependency Management]: /#dependency_management
-  [FuelPHP Validation package]: https://github.com/fuelphp/validation
+  [مدیریت وابستگی]: /#dependency_management
+  [بسته‌ی اعتبارسنجی FuelPHP]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
 * [FuelPHP](https://github.com/fuelphp)
@@ -33,5 +30,4 @@ itself.
     * [Eloquent ORM](https://github.com/illuminate/database)
     * [Queue](https://github.com/illuminate/queue)
 
-_Laravel's [Illuminate components](https://github.com/illuminate) will become better decoupled from the Laravel framework.
-For now, only the components best decoupled from the Laravel framework are listed above._
+_بسته‌ی [Illuminate components](https://github.com/illuminate) مربوط به Laravel با جدا شدن از این پروژه، در حال بهتر شدن است. هم اکنون، تنها بسته‌هایی که از این پروژه جدا شده‌اند در فهرست بالا آمده‌اند._

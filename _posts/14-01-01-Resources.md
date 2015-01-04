@@ -1,15 +1,16 @@
 ---
+title: منابع
 anchor: resources
 ---
 
-# Resources {#resources_title}
+# منابع {#resources_title}
 
-## From the Source
+## مستندات رسمی
 
 * [PHP Website](http://php.net/)
 * [PHP Documentation](http://php.net/docs.php)
 
-## People to Follow
+## چه کسانی را دنبال کنم؟
 
 * [Rasmus Lerdorf](http://twitter.com/rasmus)
 * [Fabien Potencier](http://twitter.com/fabpot)
@@ -21,11 +22,11 @@ anchor: resources
 * [Anthony Ferrara](http://twitter.com/ircmaxell)
 * [Nikita Popov](http://twitter.com/nikita_ppv)
 
-## Mentoring
+## آموزش دادن
 
-* [phpmentoring.org](http://phpmentoring.org/) - Formal, peer to peer mentoring in the PHP community.
+* [phpmentoring.org](http://phpmentoring.org/) - آموزش یک به یک در میان جامعه‌ی PHP
 
-## PHP PaaS Providers
+## فراهم‌آورندگان بستر PaaS برای PHP
 
 * [PagodaBox](https://pagodabox.com/)
 * [AppFog](https://appfog.com/)
