@@ -14,7 +14,7 @@ anchor: bytecode_cache
 
 سایر ذخیره‌سازهای Bytecode عبارتند از:
 
-* [APC](http://php.net/manual/en/book.apc.php) (PHP 5.4 و قبل از آن)
+* [APC](http://php.net/manual/en/book.apc.php) (برای PHP 5.4 و قبل از آن)
 * [XCache](http://xcache.lighttpd.net/)
 * [Zend Optimizer+](http://www.zend.com/products/server/) (قسمتی از زِند سرور)
 * [WinCache](http://www.iis.net/download/wincacheforphp) (افزونه‌ای برای ویندوز سرور)
