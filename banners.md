@@ -14,7 +14,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/btn1-120x90.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -24,7 +24,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/btn2-120x60.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/btn2-120x60.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -34,7 +34,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -44,7 +44,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -54,7 +54,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -64,7 +64,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/rect-180x150.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/rect-180x150.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -74,7 +74,7 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
 
@@ -84,6 +84,6 @@ description: "Spread the word! Use these banner to let new PHP programmers know 
 
 {% highlight html %}
 <a href="http://www.phptherightway.com">
-    <img src="images/banners/vert-rect-240x400.png" alt="PHP: The Right Way"/>
+    <img src="http://phptherightway.com/images/banners/vert-rect-240x400.png" alt="PHP: The Right Way"/>
 </a>
 {% endhighlight %}
