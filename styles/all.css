@@ -557,10 +557,10 @@ select {
 
 html,
 body {
-  font-family: WIranianSerif;
+  font-family: WIranianSerif,arial;
   color: #666666;
-  font-size: 100%;
-  line-height: 23px !important;
+  font-size: 0.9em !important;
+  line-height: 25px !important;
 }
 /* Block-level */
 h1,
