@@ -554,7 +554,7 @@ body {
   font-family: WIranianSans;
   color: #666666;
   font-size: 100%;
-  line-height: 20px !important;
+  line-height: 23px !important;
 }
 /* Block-level */
 h1,
@@ -584,7 +584,7 @@ h1,
   color: #111111;
   font-family: WIranianSans;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 1.7em;
   line-height: 40px !important;
 }
 h2,
@@ -592,7 +592,7 @@ h2,
   color: #111111;
   font-family: WIranianSans;
   font-weight: 700;
-  font-size: 24.5px;
+  font-size: 1.3em;
   line-height: 40px !important;
 }
 h3,
