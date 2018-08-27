@@ -43,15 +43,16 @@ PHP از توابعی پشتیبانی می‌کند که می‌توانند ب
 
 * [درباره‌ی Magic Methods بیشتر بدانید][magic-methods]
 * [درباره‌ی Reflection بیشتر بدانید][reflection]
+* [درباره  بیشتر Overloading بدانید][overloading]
 
-[namespaces]: http://php.net/manual/en/language.namespaces.php
-[overloading]: http://php.net/manual/en/language.oop5.overloading.php
-[oop]: http://www.php.net/manual/en/language.oop5.php
-[anonymous-functions]: http://www.php.net/manual/en/functions.anonymous.php
-[closure-class]: http://php.net/manual/en/class.closure.php
-[callables]: http://php.net/manual/en/language.types.callable.php
-[magic-methods]: http://php.net/manual/en/language.oop5.magic.php
-[reflection]: http://www.php.net/manual/en/intro.reflection.php
-[traits]: http://www.php.net/traits
-[call-user-func-array]: http://php.net/manual/en/function.call-user-func-array.php
+
+[oop]: https://secure.php.net/language.oop5
+[traits]: https://secure.php.net/language.oop5.traits
+[anonymous-functions]: https://secure.php.net/functions.anonymous
+[closure-class]: https://secure.php.net/class.closure
 [closures-rfc]: https://wiki.php.net/rfc/closures
+[callables]: https://secure.php.net/language.types.callable
+[call-user-func-array]: https://secure.php.net/function.call-user-func-array
+[magic-methods]: https://secure.php.net/language.oop5.magic
+[reflection]: https://secure.php.net/intro.reflection
+[overloading]: https://secure.php.net/language.oop5.overloading
